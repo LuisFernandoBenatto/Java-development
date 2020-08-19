@@ -13,10 +13,7 @@ salário calculado)
  */
 package funcionariohorista;
 import java.util.Scanner;
-/**
- *
- * @author luis_
- */
+
 public class FuncionarioHorista {
 
     /**
