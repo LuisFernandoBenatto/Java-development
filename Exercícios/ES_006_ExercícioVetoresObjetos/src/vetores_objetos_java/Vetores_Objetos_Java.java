@@ -1,7 +1,10 @@
 package vetores_objetos_java;
 import java.util.Random;
 import java.util.Scanner;
-
+/*
+import java.util.Random;
+Random random = new Random();
+*/
 public class Vetores_Objetos_Java {
     
     static Scanner scanf = new Scanner(System.in);
@@ -34,7 +37,7 @@ public class Vetores_Objetos_Java {
                 case 1:
                     Preencher_vetor();
                     System.out.println("Vetor preenchido!");
-                    System.out.println("\n");
+                    System.out.println("");
                     break;
                 case 2:
                     Imprimir_vetor(vet_n);   
@@ -44,7 +47,7 @@ public class Vetores_Objetos_Java {
                     System.out.println("Valores do vetor atuais: ");
                     Imprimir_vetor(vet_n);
                     Invertendo_vetor();
-                    System.out.print("Valores do depois da troca: ");
+                    System.out.println("Valores do depois da troca: ");
                     Imprimir_vetor(vet_n2); 
                     break;
                 case 4:
@@ -114,4 +117,8 @@ public class Vetores_Objetos_Java {
     }
 /******************************************************************************/
 }
-/******************************************************************************/
+/******************************************************************************/       
+
+        
+  
+
