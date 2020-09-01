@@ -69,26 +69,26 @@ public class Main {
             System.out.println(vetorCarro[i].imprimir());
         }
         
-        int mclaren = buscar("Mclaren", vetorCarro);
+        int mclaren = buscar("Mclaren", vetorCarro, _ponteiro );
         System.out.println(vetorCarro[mclaren].imprimir());
-        int redBull = buscar("Red Bull", vetorCarro);
+        int redBull = buscar("Red Bull", vetorCarro, _ponteiro );
         System.out.println(vetorCarro[redBull].imprimir());
         
-        int equipeAlphaRomeo = buscar("Alpha Romeo", vetorCarro);
+        int equipeAlphaRomeo = buscar("Alpha Romeo", vetorCarro, _ponteiro);
         
-        if(removerElemento("Alpha Romeo", vetorCarro)) {
-            System.out.println("\nCarro removido!\n");
-        }
+        removerElemento("Alpha Romeo", vetorCarro, _ponteiro);
+        System.out.println("\nCarro removido!\n");
+        
         System.out.println(vetorCarro[equipeAlphaRomeo].imprimir());
         
-        if(buscar("Alpha Romeo", vetorCarro) == -1 ) {
+        if(buscar("Alpha Romeo", vetorCarro, _ponteiro) == -1 ) {
             System.out.println("Essa equipe de corrida, não existe!!!\n");
         }
     }
     //--------------------------------------------------------------------------
-    public static int buscar(String equipe, CarroF1 vetorCarro[]) {
+    public static int buscar(String equipe, CarroF1 vetorCarro[], int ponteiro) {
         System.out.println("**** Buscando Carro de Formula 1 ****\n");
-        for (int i = 0; i < vetorCarro.length; i++) {
+        for (int i = 0; i <= ponteiro; i++) {
             if(vetorCarro[i]._equipe == equipe) {
                 return i;
             }
@@ -96,14 +96,15 @@ public class Main {
         return -1;
     }
     //--------------------------------------------------------------------------
-    public static boolean removerElemento(String equipe, CarroF1 vetorCarro[]) {
-        int index = buscar(equipe, vetorCarro);
+    public static int removerElemento(String equipe, CarroF1 vetorCarro[], int ponteiro) {
+        int index = buscar(equipe, vetorCarro, ponteiro);
         
         if(index == -1) {
-            return false;
+            System.out.println("Objeto não encontrado para remover!\n");
+            return ponteiro;
         }
         
-        for (int i = index; i < vetorCarro.length ; i++) {
+        for (int i = index; i <= ponteiro ; i++) {
             if(i <(vetorCarro.length)-1) {
                 vetorCarro[i] = vetorCarro[i+1];
             }  
@@ -111,7 +112,9 @@ public class Main {
                 vetorCarro[i] = new CarroF1();
             }
         }
-        return true;
+        ponteiro = ponteiro - 1;
+
+        return ponteiro;
     }
     //--------------------------------------------------------------------------
     public static int inserirDado(CarroF1 vetorCarro[], CarroF1 carro1, int ponteiro)  { 
