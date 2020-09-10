@@ -8,17 +8,19 @@ manter uma lista de consultas. Mostre como acessar os dados de consultas e pacie
 package data.paciente;
 
 import java.time.LocalDate;
+import java.time.Month;
+import java.time.DateTimeException;
 
 public class Consulta {
     private LocalDate _dataDaConsulta;
+    private Paciente pacientes;
     
-    private Paciente pacientes = new Paciente();
-    
-    public Consulta() {
-        _dataDaConsulta = LocalDate.of(1, 1, 1);
+    public Paciente getPaciente() {
+        return this.pacientes;
     }
-
-    
+    public void setPaciente(Paciente paciente) {
+        this.pacientes = paciente;
+    }
     public LocalDate getDataDaConsulta(){
         return _dataDaConsulta;
     }

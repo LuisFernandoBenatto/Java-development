@@ -16,11 +16,6 @@ public class Paciente {
         _codigo = 0;
     }
     
-    public Paciente(String nome, int codigo) {
-        this._nome = nome;
-        this._codigo = codigo;
-    }
-    
     public String getNome(){
         return _nome;
     }
