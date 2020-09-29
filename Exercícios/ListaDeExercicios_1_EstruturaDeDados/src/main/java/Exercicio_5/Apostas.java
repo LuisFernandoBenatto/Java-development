@@ -1,6 +1,7 @@
 package Exercicio_5;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Apostas {
     public static void main(String[] args) {
@@ -25,9 +26,10 @@ public class Apostas {
         for (int i = 0; i < 13; i++) {
             valorSorteado = scanf.nextInt();
             scanf.nextLine();
-            
+
             resultado[i] = valorSorteado;
         }
+        Arrays.sort(resultado);
         return resultado;
     }
     public static Apostador[] inserir(Apostador apostadores[], int quantApostadores) {
@@ -47,6 +49,7 @@ public class Apostas {
                 
                 apostas[j] = valorApostado;
             }
+            Arrays.sort(apostas);
             
             Apostador apostador = new Apostador(nome, apostas);
             apostadores[i] = apostador;
