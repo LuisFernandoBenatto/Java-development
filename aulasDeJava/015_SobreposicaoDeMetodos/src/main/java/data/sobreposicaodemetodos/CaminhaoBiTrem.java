@@ -9,10 +9,13 @@ public class CaminhaoBiTrem extends Caminhao {
         this.setMarca("");
         this.setAno(0);
         this.setValor(0.0);
+        this.setPlaca("");
+        this.setCapacidadeDeCarga(0);
         this.cargaAdicional = 0;
     }
-    public CaminhaoBiTrem(String marca, Integer ano, Double valor, Integer capacidadeDeCarga, Integer cargaAdicional) {
-        super(marca, ano, valor, capacidadeDeCarga);
+    public CaminhaoBiTrem(String marca, Integer ano, Double valor,String placa,
+            Integer capacidadeDeCarga, Integer cargaAdicional) {
+        super(marca, ano, valor,placa, capacidadeDeCarga);
         this.cargaAdicional = cargaAdicional;
     }
     

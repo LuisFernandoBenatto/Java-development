@@ -2,7 +2,7 @@ package data.sobreposicaodemetodos;
 
 import java.time.LocalDate;
 
-// Sub-classe de Veiculos
+// Sub-classe de Veiculo
 public class Caminhao extends Veiculo {
     private Integer capacidadeDeCarga;
     
@@ -10,11 +10,13 @@ public class Caminhao extends Veiculo {
         this.setMarca("");
         this.setAno(0);
         this.setValor(0.0);
+        this.setPlaca("");
         this.capacidadeDeCarga = 0;
     }
     
-    public Caminhao(String marca, Integer ano, Double valor, Integer capacidadeDeCarga) {
-        super(marca, ano, valor);
+    public Caminhao(String marca, Integer ano, Double valor,
+            String placa,Integer capacidadeDeCarga) {
+        super(marca, ano, valor, placa);
         this.capacidadeDeCarga = capacidadeDeCarga ;
     }
     

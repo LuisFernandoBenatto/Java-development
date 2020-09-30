@@ -10,12 +10,14 @@ public class Veiculo {
         this.marca = "";
         this.ano = 0;
         this.valor = 0.0;
+        this.placa = "";
     }
     
-    public Veiculo(String marca, Integer ano, Double valor) {
+    public Veiculo(String marca, Integer ano, Double valor, String placa) {
         this.marca = marca;
         this.ano = ano;
         this.valor = valor;
+        this.placa = placa;
     }
     
     public String getMarca() {
@@ -47,6 +49,20 @@ public class Veiculo {
     public String toString() {
         return "Marcar : " + this.marca + " - " +
                 "Ano: " + this.ano + " - " +
-                "Valor: " + this.valor;
+                "Valor: " + this.valor + " - " +
+                "Placa: " + this.placa;
+    }
+    @Override
+    public boolean equals(Object obj){
+      if (obj == null) {
+          return false;
+      }
+
+      final Veiculo other = (Veiculo) obj;
+      if ((this.placa == null) ? (other.placa != null) : !this.placa.equals(other.placa)) {
+          return false;
+      } else {
+          return true;
+      }     
     }
 }
