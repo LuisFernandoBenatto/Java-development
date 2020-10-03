@@ -3,7 +3,7 @@ package Exercicio_14;
 public abstract class ListaEstatica {
     public int prim;
     public int ultimo;
-
+    //--------------------------------------------------------------------------
     /*
         • O método de inserção deverá receber como parâmetro um nó e deverá 
         alocá-lo na lista estática;
@@ -32,5 +32,29 @@ public abstract class ListaEstatica {
         este método que o método de impressão será baseado;
     */ 
     abstract public void imprimeLista();
-
+    //--------------------------------------------------------------------------
+    public ListaEstatica() {
+        this.prim = 0;
+        this.ultimo = 0;
+    }
+    
+    public ListaEstatica(int primeiro, int ultimo) {
+        this.prim = primeiro;
+        this.ultimo = ultimo;
+    }
+    
+    public int getPrimeiro() {
+        return this.prim;
+    }
+    public void setPrimeiro(int primeiro) {
+        this.prim = primeiro;
+    }
+    
+    public int getUltimo() {
+        return this.ultimo;
+    }
+    public void setUltimo(int ultimo) {
+        this.ultimo = ultimo;
+    }
+    //--------------------------------------------------------------------------
 }
