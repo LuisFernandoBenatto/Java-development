@@ -6,13 +6,16 @@ package Exercicio_14;
     produtos armazenados na listaCompras e imprimir o valor na tela.
  */
 public class ListaDeCompras extends ListaEstatica {
+    private final int TAMANHO;
+    private No[] no;
     private double calcularTotal;
     
-    public ListaDeCompras() {
+    public ListaDeCompras(int tamanho) {
+        this.TAMANHO = tamanho;
+        this.no = new No[TAMANHO];
+        this.prim = 0;
+        this.ultimo = 0;
         this.calcularTotal = 0.0;
-    }
-    public ListaDeCompras(double calcularTotal) {
-        this.calcularTotal = calcularTotal;
     }
     public Double getCalcularTotal() {
         return this.calcularTotal;
@@ -21,68 +24,61 @@ public class ListaDeCompras extends ListaEstatica {
         this.calcularTotal = calcularTotal;
     }
     //--------------------------------------------------------------------------
-    final int TAMANHO = 5;
-    No produto[] = new No[TAMANHO];
-    //--------------------------------------------------------------------------
     @Override
-    public void insere(No no) {
-        // Verificando se a lista está vazia
-        if(this.prim == -1 || this.ultimo == -1) {
-            prim = 0;
-            ultimo = 0;
-            produto[prim] = no;
-            System.out.println("Elemento inserido na Lista!!!" + no.toString());
-        } else if(ultimo < produto.length) {
-            //Fila não está cheia....
-            ultimo = ultimo + 1;
-            produto[ultimo] = no;
-            System.out.println("Elemento inserido na Lista!!!" + no.toString());
+    public void insere(No n) {
+        if(ultimo < no.length) {
+            // Tenho espaço...
+            no[ultimo] = n; // Insere o elemento na posição
+            ultimo = (ultimo + 1) % no.length; // Atualizando o ponteiro
+            System.out.println("Item inserido com sucesso!!!");
         } else {
-            System.out.println("A Lista já está cheia!!!" + no.toString());
+            System.out.println("A lista está cheio! Volte amanhã!");
         }
     }
     //--------------------------------------------------------------------------
     @Override
     public void limpaLista() {
-        produto = new No[TAMANHO];      
+        this.no = new No[TAMANHO]; 
+        this.prim = 0;
+        this.ultimo = 0;
     }
     //--------------------------------------------------------------------------
     @Override
     public No busca(String s) {
         for (int i = this.prim; i <= this.ultimo; i++) {
-            if(produto[i].getNomeProduto().contains(s)) {
-                return produto[i];
-            } else {
-                System.out.println((i + 1) + " - " + " Nome diferente!");
-            }
+            if(no[i].produto.getNomeProduto().contains(s)) {
+                return no[i];
+            } 
         }
         return null;    
     }
     //--------------------------------------------------------------------------
     @Override
-    public void remove(String r) {
-        // Verificando se a lista está vazia
-        if(this.prim == -1 || this.ultimo == -1) {
-            produto[ultimo] = null;
-            ultimo--;  
-        } else {
-            System.out.println("A Lista já está cheia!!!");
-        }
+    public No remove() {      
+        if(this.ultimo == 0) {
+            System.out.println("A lista está vazia!!!");
+            return null;
+        } 
+        No newNo = no[prim];
+        prim = (prim + 1) % no.length;
+        System.out.println("Item removido com sucesso!!!");
+        return newNo;
+        
     }
     //--------------------------------------------------------------------------
     @Override
     public void imprimeLista() {
         for (int i = this.prim; i <= this.ultimo; i++) {
-            System.out.println(i + " - " + produto[i]);
+            System.out.println(i + " - " + no[i]);
         }
     }
     //--------------------------------------------------------------------------
-    public No getElement(int i) {
-        if(i <= ultimo) {
-            return produto[i];
-        }else {
-            return null;
+    public double calcularTotal()  {
+        for (int i = this.prim; i < this.ultimo; i++) {
+            Produto produto = no[i].produto;
+            calcularTotal += produto.getValor() * produto.getQuantidade();   
         }
-    }
+        return this.calcularTotal;
+    }    
     //--------------------------------------------------------------------------
 }

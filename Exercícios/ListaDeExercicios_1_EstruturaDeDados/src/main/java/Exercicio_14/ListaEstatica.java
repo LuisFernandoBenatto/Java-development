@@ -24,7 +24,7 @@ public abstract class ListaEstatica {
         • O método de remoção deve excluir o elemento da lista e manipular os 
         ponteiros de forma adequada de modo que a lista não perca a referência;
     */ 
-    abstract public void remove(String r);
+    abstract public No remove();
     /*
         • O método de impressão deverá utilizar o método da super classe Object 
         denominado toString(), que deverá ser implementado na classe que será 
@@ -33,7 +33,7 @@ public abstract class ListaEstatica {
     */ 
     abstract public void imprimeLista();
     //--------------------------------------------------------------------------
-    public ListaEstatica() {
+    /*public ListaEstatica() {
         this.prim = 0;
         this.ultimo = 0;
     }
@@ -55,6 +55,6 @@ public abstract class ListaEstatica {
     }
     public void setUltimo(int ultimo) {
         this.ultimo = ultimo;
-    }
+    }*/
     //--------------------------------------------------------------------------
 }
