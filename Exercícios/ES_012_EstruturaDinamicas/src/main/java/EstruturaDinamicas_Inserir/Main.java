@@ -24,7 +24,7 @@
  * 
  * Em Estrutura dinâmica os ponteiros são
  * representações dos endereços e memória dos 
- * objetos que fazem parte da estrutura de dados
+ * objetos que fazem parte da estrutura de dados.
  * 
  */
 package EstruturaDinamicas_Inserir;
@@ -60,5 +60,5 @@ public class Main {
  * (encadeados) por meio de ponteiros;
  * 
  * Ponteiros: Inicio e Fim
- * De valor Null inicialmente
+ * De valor Null inicialmente.
  */
