@@ -14,7 +14,36 @@ package Exercicio_III;
 
 public class Main {
     public static void main(String[] args) {
+        Diarista diarista_I = new Diarista(60.0, 22);
+        Gerente gerente_I = new Gerente(2589.99);
         
+        System.out.println("Salario diarista: " + diarista_I.calcularSalario());
+        System.out.println("Salario gerente: " + gerente_I.calcularSalario());
+        System.out.println("");
+        
+        Diarista diarista_II = new Diarista();
+        Gerente gerente_II = new Gerente();
+        
+        diarista_II.setDiasTrabalhados(30);
+        diarista_II.setSalarioDia(80);
+        gerente_II.setSalarioMes(20_876.25);
+        
+        
+        System.out.println("Salario diarista: " + diarista_II.calcularSalario());
+        System.out.println("Salario gerente: " + gerente_II.calcularSalario());
+        System.out.println("");
+        
+        Funcionario diarista_III = new Diarista(75.88, 20);
+        Funcionario gerente_III = new Gerente(9999.99);
+    
+        FolhaDePagamento folhaDePagamento = new FolhaDePagamento();
+        folhaDePagamento.adicionar(diarista_I);
+        folhaDePagamento.adicionar(diarista_III);
+        folhaDePagamento.adicionar(gerente_I);
+        folhaDePagamento.adicionar(gerente_III);
+
+        folhaDePagamento.imprimir();
+
     }
     
 }

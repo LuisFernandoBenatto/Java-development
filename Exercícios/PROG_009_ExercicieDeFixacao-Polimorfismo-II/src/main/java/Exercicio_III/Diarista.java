@@ -8,7 +8,6 @@ public class Diarista extends Funcionario{
     public Double calcularSalario() {
         return this.getSalarioDia() * this.getDiasTrabalhados();
     }
-
     public Diarista() {
         this.salarioDia = 0.0;
         this.diasTrabalhados = 0;
@@ -17,7 +16,6 @@ public class Diarista extends Funcionario{
         this.salarioDia = salarioDia;
         this.diasTrabalhados = diasTrabalhados;
     }
-
     public int getDiasTrabalhados() {
         return diasTrabalhados;
     }
@@ -30,4 +28,10 @@ public class Diarista extends Funcionario{
     public void setSalarioDia(double salarioDia) {
         this.salarioDia = salarioDia;
     } 
+    @Override
+    public String toString() {
+        return "Diarista - trabalha " + this.getDiasTrabalhados() 
+                + " dias ao mês." + " - " + "Recebe " + this.getSalarioDia() + 
+                " por dia.";           
+    }
 }

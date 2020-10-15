@@ -1,8 +1,7 @@
 /*
     1 Como impedir que um método seja sobrescrito? 
     Como impedir que uma classe seja herdada? 
-    Dê exemplo com código. 
-    (Desnecessário escrever corpo de classe e de método, 
+    Dê exemplo com código. (Desnecessário escrever corpo de classe e de método, 
     apenas a parte essencial para mostrar o conceito).
  */
 package Exercicio_I;
@@ -13,6 +12,9 @@ public class Veiculos {
     private int Passageiros;
     private String Combustivel;
 
+    public void quilometrosPorHora() {
+        System.out.println("Bem rápido");
+    }
     public Veiculos() {
         this.Modelo = "";
         this.Velocidade = 0.0;

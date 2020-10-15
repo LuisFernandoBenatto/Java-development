@@ -10,7 +10,6 @@
 package Exercicio_II;
 
 public class Main {
-
     public static void main(String[] args) {
         String string = new String();
         Classe classe = new Classe();
@@ -18,8 +17,10 @@ public class Main {
         System.out.println("-----------------------------------------------");
         System.out.println(string.toString()); // Redundant String.toString()
         System.out.println("");
+        string = "Texto!!!!!";
+        System.out.println(string.toString());
+        System.out.println("");
         System.out.println(classe.toString());
         System.out.println("-----------------------------------------------");
     }
-    
 }

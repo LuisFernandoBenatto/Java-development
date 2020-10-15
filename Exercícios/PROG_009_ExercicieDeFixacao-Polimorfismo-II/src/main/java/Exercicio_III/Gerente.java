@@ -7,7 +7,6 @@ public class Gerente extends Funcionario{
     public Double calcularSalario() {
         return this.getSalarioMes() + ((this.getSalarioMes() * 10) / 100);
     }
-
     public Gerente() {
         this.salarioMes = 0.0;
     }
@@ -20,4 +19,11 @@ public class Gerente extends Funcionario{
     public void setSalarioMes(double salarioMes) {
         this.salarioMes = salarioMes;
     }  
+
+    @Override
+    public String toString() {
+        return "Gerente recebe: " + this.getSalarioMes() + " por mês." + " - "
+                + "Com mais um adicional de 10%, ele recebe " 
+        + this.calcularSalario() + " por mês";
+    }
 }
