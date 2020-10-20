@@ -27,8 +27,7 @@
  * objetos que fazem parte da estrutura de dados
  * 
  */
-package EstruturaDinamicas_Inserir;
-
+package EstruturaDinamicas_Busca;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,6 +47,11 @@ public class Main {
         lista.inserir(n);
         
         lista.imprimirLista();
+        System.out.println("-----------------------------------------------");
+        
+        System.out.println("Buscando.....");
+        No buscado = lista.buscar("C");
+        System.out.println(buscado.toString());
         System.out.println("-----------------------------------------------");
     }
 }
