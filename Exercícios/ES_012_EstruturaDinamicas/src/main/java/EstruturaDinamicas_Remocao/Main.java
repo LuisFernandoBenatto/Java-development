@@ -53,6 +53,73 @@ public class Main {
         No buscado = lista.buscar("C");
         System.out.println(buscado.toString());
         System.out.println("-----------------------------------------------");
+        
+        System.out.println("Removendo......");
+        /*
+        No removido = lista.remover("A");
+        System.out.println("1 -  remoção: " + removido.toString());
+        System.out.println("********************");
+        removido = lista.remover("D");
+        System.out.println("2 -  remoção: " + removido.toString());
+        System.out.println("********************");
+        */
+        No removido = lista.remover("B");
+        System.out.println("Remoção: " + removido.toString());
+        System.out.println("********************");
+        /*
+        removido = lista.remover("C");
+        System.out.println("4 -  remoção: " + removido.toString());
+        */
+        removido = lista.remover("Z");
+        System.out.println("-----------------------------------------------");
+        
+        lista.imprimirLista();
+        System.out.println("-----------------------------------------------");
+        
+        System.out.println("Inserirndo novos elementos............");
+        
+        lista.inserir(new No("E", 5));
+        lista.inserir(new No("F", 6));
+        lista.inserir(new No("G", 7));
+        lista.inserir(new No("H", 8));
+        lista.inserir(new No("I", 9));
+        lista.inserir(new No("J", 10));
+        System.out.println("-----------------------------------------------");
+        lista.imprimirLista();
+        System.out.println("-----------------------------------------------");
+        
+        System.out.println("Removendo outros elementos...........");
+        lista.remover("C");
+        lista.remover("D");
+        lista.remover("E");
+        lista.remover("H");
+        lista.remover("J");
+        System.out.println("-----------------------------------------------");
+        
+        System.out.println("");
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++" + 
+                "+++++++++++++++++++++++++++++++++++++++++++++++++");
+        lista.imprimirLista();
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++" + 
+                "+++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("");
+        
+        System.out.println("-----------------------------------------------");
+        
+        System.out.println("Removendo outros elementos...........");
+        lista.remover("F");
+        lista.remover("G");
+        lista.remover("I");
+        lista.remover("A");
+        System.out.println("-----------------------------------------------");
+        
+        System.out.println("");
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++" + 
+                "+++++++++++++++++++++++++++++++++++++++++++++++++");
+        lista.imprimirLista();
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++" + 
+                "+++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("");
     }
 }
 /** LISTA ENCADEADA DINÂMICA
