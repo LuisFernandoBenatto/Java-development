@@ -10,11 +10,13 @@ public class ListaDinamica {
             inicio = n;
             fim = n;
             System.out.println("Elemento inserido com sucesso!!!");
+            System.out.println("");
         } else {
             fim.prox = n;
             fim = n;
             System.out.println("Elemento inserido no final... "
                     + "Inserido com sucesso!");
+            System.out.println("");
         }
     }
     public No buscar(String no) {
@@ -62,13 +64,16 @@ public class ListaDinamica {
                     }
                 } else {
                     System.out.println("Elemento não encontrado na lista");
+                    System.out.println("");
                     return null;
                 }               
             } 
             System.out.println("Elemento removido: " + " -> "+ no);
+            System.out.println("");
             return aux;
         } else {
             System.out.println("Lista está vazia.....");
+            System.out.println("");
             return null;
         }
     }
@@ -77,6 +82,7 @@ public class ListaDinamica {
         No aux = inicio;
         if(inicio == null) {
             System.out.println("LISTA ESTÁ VAZIA...........................");
+            System.out.println("");
         } else {
             System.out.println("");
             System.out.println("Inicio da Lista: "  + inicio.getClass() + "@" +
