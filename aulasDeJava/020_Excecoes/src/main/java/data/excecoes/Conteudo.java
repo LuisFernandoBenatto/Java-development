@@ -29,4 +29,7 @@ o programa compile
     try -> 
     tente fazer se não der trate dentro do bloco
     <- catch
+
+5 - Como utilizar mais de um bloco catch para tratar diferentes tipos de exceções:
+
 */

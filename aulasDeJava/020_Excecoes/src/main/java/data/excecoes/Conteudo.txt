@@ -1,0 +1,38 @@
+Capitulo 9 - Excecoes
+
+1 - O que sao?
+    Excecoes sao situacaes anormais que se nao forem tratadas
+fazem o programa para de executar de uma forma desejada
+
+Exemplo mais classico:
+    Divisao de um numero por zero
+
+    Ao ser executado uma divisao por zero temos como resultado
+uma excecao aritmetica. E essa excecao cria uma situacao que
+faz com que o programa interrompa de uma forma ao desejada
+
+2 - Qual o efeito de uma excecao nao tratada?
+    Se a excecao nao for tratada ela causa a interrupcao do
+programa.
+
+3 - Qual a diferenca entre excecoes verificadse nao verificadas?
+    Basicamente uma excecao nao verificada a uma exceao
+a qual programador nao tem a obrigacao de fazer um
+tratamento
+    Ja a excecao verificada por sua vez, e a excecao que tem
+a obrigacao de tratamento feito pelo programado para que
+o programa compile
+
+4 - Como tratar com try/catch?
+    E uma das forma de se tratar as excecoes
+    try -> 
+    tente fazer se nao der trate dentro do bloco
+    <- catch
+
+5 - Como utilizar mais de um bloco catch para tratar diferentes tipos de excecoes:
+
+6 - Como criar uma excecao personalizada
+
+7 - Lancando excecoes "manualmente" (throw)
+
+8 - Delegando o tratamento de excecoes (trows)
