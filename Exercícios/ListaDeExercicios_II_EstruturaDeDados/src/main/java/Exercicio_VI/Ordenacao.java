@@ -43,9 +43,10 @@ public class Ordenacao {
        for (int j = 0; j < this.vetObj.length; j++) {
            for (int i = j; i < this.vetObj.length; i++) {
                if(this.vetObj[i].getChave() < this.vetObj[j].getChave()) {
+                   int valor;
                    int temp = this.vetObj[j].getChave();
-                   this.vetObj[j].getChave() = this.vetObj[i].getChave();
-                   this.vetObj[i].getChave() = temp;
+                   this.vetObj[j].setChave(this.vetObj[i].getChave());
+                   this.vetObj[i].setChave(temp);
                 }
             }
         }

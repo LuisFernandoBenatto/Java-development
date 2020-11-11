@@ -64,7 +64,7 @@ public class Main {
             + vetObj[i].getValor());
         }
         
-        No[] vetSelectionSort = ordenacao.selectionSort());
+        No[] vetSelectionSort = ordenacao.selectionSort();
         for (int i = 0;i < vetSelectionSort.length; i++) {
             System.out.println(vetSelectionSort[i].getChave() + " - " +
                     vetSelectionSort[i].getValor());
