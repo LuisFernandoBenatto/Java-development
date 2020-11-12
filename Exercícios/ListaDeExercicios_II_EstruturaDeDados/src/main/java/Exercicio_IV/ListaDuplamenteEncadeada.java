@@ -14,6 +14,7 @@ public class ListaDuplamenteEncadeada {
             boolean continuar = true;
             while(continuar == true) {
                 int comparar = aux.estudante.nome.compareTo(no.estudante.nome);
+                //Rever a linha 16
                 if(comparar > 0) {
                     if(aux == this.inicio) {
                         no.prox = this.inicio;
