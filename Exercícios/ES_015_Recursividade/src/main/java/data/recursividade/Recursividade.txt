@@ -1,0 +1,20 @@
+Recursividade
+
+O que é Recursividade
+
+-- Na Computação Recursividade é a capacidade de uma função
+chamar ela mesma.
+
+********************************************************************************
+int metodo(int valor){
+    if(valor<=250){
+        a = metodo(valor+1);
+        return a;
+    } else {
+        return 1;
+    }
+}
+********************************************************************************
+
+Paraos métodos recursivos, é necessário que haja um casos base 
+para evitarmos loopings infinitos ou estouro de memória.
