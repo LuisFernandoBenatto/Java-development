@@ -1,0 +1,25 @@
+Programação Dinâmica
+
+- Armazenar resultaos já processados em uma variável, e
+quando o cálculo é solicitado novamente, já temo o resultado
+armazenado.
+
+int fibonacci_vet[] = new int[100];
+
+fibonacci_vet[0] = 1;
+fibonacci_vet[1] = 1;
+
+********************************************************************************
+    int fibonacci(int value) {
+        if(fibonacci_vet[value] != 0) {
+            return fibonacci_vet[value];
+        } else {
+            if(value <= 2) {
+                return 1;
+            } else {
+                fibonacci_vet[value] = fibonacci(value - 1) + fibonacci(value - 2);
+                return fibonacci_vat[value];
+            }
+        }
+    }
+********************************************************************************
