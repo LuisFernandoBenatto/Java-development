@@ -1,0 +1,17 @@
+Algoritmos de Busca
+
+-> Sequencial
+    -> Indicado para estruturas não ordenadas;
+    -> N o pior caso, a busca vai passar por todos
+os elementos da estrutura; O(n)
+
+-> Dados Ordenados
+    -> Busca Binária; 
+        Dividir para conquistar
+    -> Busca em profundidade em árvores;
+    -> Busca em Hash;
+
+-> Busca Binária 
+    -> Pré-requesitos - Estrutura ordenada;
+    -> A cada interação, há a divisão da estrutura
+em 2 partes.
