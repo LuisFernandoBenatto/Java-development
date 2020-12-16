@@ -10,12 +10,7 @@ public class Main {
         System.out.println("Valor: ");
         n = scanf.nextInt();
         
-        int[] vet = new int[n];
-        for (int i = 0; i < n; i++) {
-            vet[i] = i;
-            System.out.println("Posição: " + i + " - " + vet[i]); 
-        } 
         System.out.println("Resultado: " + 
-                                         soma.primeirosInteiros(vet, n));
+                                         soma.primeirosInteiros(n));
     }   
 }

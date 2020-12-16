@@ -1,11 +1,11 @@
 package Exercicio_I;
 
 public class SomaDosPrimeirosInteiros {
-    public int primeirosInteiros(int vet[], int tamanho) {
-        if(tamanho == 0) {
-            return vet[0];
+    public int primeirosInteiros(int n) {
+        if(n <= 1) {
+            return 1;
         } else {
-            return vet[tamanho - 1] + primeirosInteiros(vet, tamanho - 1);
+            return n + primeirosInteiros(n - 1);
         }
     }   
 }
