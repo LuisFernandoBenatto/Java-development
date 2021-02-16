@@ -49,7 +49,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="data.NovoUsuarioController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="data.NovoProdutorController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -57,7 +57,7 @@
           <items>
                   <MenuItem mnemonicParsing="false" text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Listar Usuários" />
+            <MenuItem mnemonicParsing="false" text="Listar Produtores" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#voltar" text="Voltar ao Menu Principal" />
             <MenuItem mnemonicParsing="false" onAction="#fechar" text="Sair">
@@ -90,7 +90,7 @@
                   </Lighting>
                </effect>
                <children>
-                  <Button cancelButton="true" layoutX="690.0" layoutY="348.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
+                  <Button cancelButton="true" layoutX="690.0" layoutY="348.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -104,37 +104,37 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Label layoutX="280.0" layoutY="93.0" text="Nome de Usuário:" textAlignment="CENTER">
+                  <Label layoutX="262.0" layoutY="14.0" text="Nome de Produtor:" textAlignment="CENTER">
                      <font>
                         <Font name="Edwardian Script ITC" size="64.0" />
                      </font>
                   </Label>
-                  <Label layoutX="497.0" layoutY="227.0" text="Senha:" textAlignment="CENTER">
+                  <Label layoutX="316.0" layoutY="163.0" text="Quant. Produto:" textAlignment="CENTER">
                      <font>
                         <Font name="Edwardian Script ITC" size="64.0" />
                      </font>
                   </Label>
-                  <Label layoutX="499.0" layoutY="161.0" text="Login:" textAlignment="CENTER">
+                  <Label layoutX="465.0" layoutY="87.0" text="Produto:" textAlignment="CENTER">
                      <font>
                         <Font name="Edwardian Script ITC" size="64.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoNomeUsuario" layoutX="690.0" layoutY="141.0" prefHeight="40.0" prefWidth="567.0">
+                  <TextField fx:id="campoNomeProdutor" layoutX="690.0" layoutY="38.0" prefHeight="40.0" prefWidth="567.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="campoLogin" layoutX="690.0" layoutY="207.0" prefHeight="40.0" prefWidth="373.0">
+                  <TextField fx:id="campoProduto" layoutX="690.0" layoutY="111.0" prefHeight="40.0" prefWidth="373.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="campoSenha" layoutX="690.0" layoutY="269.0" prefHeight="40.0" prefWidth="373.0">
+                  <TextField fx:id="campoQuantidadeDeProduto" layoutX="690.0" layoutY="187.0" prefHeight="40.0" prefWidth="180.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="438.0" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo usuário" wrapText="true">
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="438.0" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo produtor" wrapText="true">
                      <font>
                         <Font name="Edwardian Script ITC" size="90.0" />
                      </font>
@@ -148,6 +148,21 @@
                            </light>
                         </Lighting>
                      </effect>
+                  </Label>
+                  <Label layoutX="278.0" layoutY="245.0" text="Data de Entrada:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Edwardian Script ITC" size="64.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="campoDataDeEntrada" layoutX="690.0" layoutY="269.0" prefHeight="40.0" prefWidth="180.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="883.0" layoutY="163.0" text="em toneladas" textAlignment="CENTER">
+                     <font>
+                        <Font name="Edwardian Script ITC" size="64.0" />
+                     </font>
                   </Label>
                </children>
             </Pane>
@@ -168,7 +183,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button alignment="CENTER" cancelButton="true" contentDisplay="CENTER" defaultButton="true" layoutX="16.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -198,7 +213,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="127.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
+                  <Button cancelButton="true" defaultButton="true" layoutX="127.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>

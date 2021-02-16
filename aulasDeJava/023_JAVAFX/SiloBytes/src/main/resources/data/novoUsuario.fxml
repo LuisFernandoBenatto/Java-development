@@ -55,6 +55,8 @@
       <menus>
         <Menu mnemonicParsing="false" text="Arquivo">
           <items>
+                  <MenuItem mnemonicParsing="false" text="Armazenagem Existentes" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" text="Listar Usuários" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#voltar" text="Voltar ao Menu Principal" />
@@ -196,7 +198,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="127.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="127.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>

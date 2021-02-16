@@ -8,6 +8,10 @@ import javafx.scene.control.TextField;
 
 public class NovoUsuarioController {
     @FXML
+    private void cadastrarProdutor() throws IOException{
+        App.setRoot("novoProdutor");
+    }
+    @FXML
     private TextField campoLogin;
 
     @FXML
