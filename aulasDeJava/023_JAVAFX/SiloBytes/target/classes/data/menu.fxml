@@ -38,9 +38,12 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -53,13 +56,13 @@
       <menus>
         <Menu mnemonicParsing="false" text="Arquivo">
           <items>
-            <Menu disable="true" mnemonicParsing="false" text="..." />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem disable="true" mnemonicParsing="false" text="Entrada de Produtos" />
-                  <MenuItem disable="true" mnemonicParsing="false" text="Saída de Produtos" />
+            <MenuItem mnemonicParsing="false" text="Entrada de Produtos" />
+                  <MenuItem mnemonicParsing="false" text="Saída de Produtos" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem disable="true" mnemonicParsing="false" text="A Receber" />
+                  <MenuItem mnemonicParsing="false" text="A Receber" />
             <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Listar Devedores" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#sair" text="Sair ">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
@@ -70,19 +73,19 @@
           <items>
             <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario" text="Novo Usuário" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem disable="true" mnemonicParsing="false" text="Lista de Usuários" />
+            <MenuItem mnemonicParsing="false" text="Lista de Usuários" />
           </items>
         </Menu>
             <Menu mnemonicParsing="false" text="Produtor">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario" text="Novo Produtor" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem disable="true" mnemonicParsing="false" text="Lista de Produtores" />
+                  <MenuItem mnemonicParsing="false" text="Lista de Produtores" />
                </items>
             </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
           <items>
-            <MenuItem disable="true" mnemonicParsing="false" text="Ajuda">
+            <MenuItem mnemonicParsing="false" text="Ajuda">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -108,7 +111,7 @@
                            </light>
                         </Lighting>
                      </effect></Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" stylesheets="@../styles/Style.css" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -122,7 +125,7 @@
                            </light>
                         </Lighting>
                      </effect></Button>
-                  <Button defaultButton="true" layoutX="349.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="349.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -136,7 +139,7 @@
                            </light>
                         </Lighting>
                      </effect></Button>
-                  <Button defaultButton="true" layoutX="127.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="127.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -150,7 +153,7 @@
                            </light>
                         </Lighting>
                      </effect></Button>
-                  <Button defaultButton="true" layoutX="239.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Saída de Produtos" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="239.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Saída de Produtos" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -165,7 +168,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button defaultButton="true" layoutX="460.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="A Receber" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="460.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="A Receber" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -184,34 +187,25 @@
             </Pane>
             <Pane layoutY="110.0" opacity="0.9" prefHeight="577.0" prefWidth="1367.0" style="-fx-background-color: #fff; -fx-border-color: #bbb;">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="619.0" layoutY="282.0" prefHeight="275.0" prefWidth="734.0" style="-fx-alignment: center;" text="Silo Bytes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Edwardian Script ITC" size="200.0" />
-                     </font>
-                     <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
-                     </effect>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="47.0" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Controle de aluguel em espaço em silos" wrapText="true">
+                  <ImageView fitHeight="577.0" fitWidth="1367.0" layoutX="2.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/siloBytes.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="24.0" layoutY="57.0" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Controle de aluguel em espaço em silos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Edwardian Script ITC" size="90.0" />
                      </font>
                      <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="629.0" layoutY="296.0" prefHeight="275.0" prefWidth="734.0" style="-fx-alignment: center;" stylesheets="@../styles/Style.css" text="Silo Bytes" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Edwardian Script ITC" size="200.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
                      </effect>
                   </Label>
                </children>

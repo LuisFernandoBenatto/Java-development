@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.scene.image.Image;
 
 /**
  * JavaFX App
@@ -17,7 +18,16 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("menu"), 640, 480);
+        scene = new Scene(loadFXML("menu"), 1368, 700);
+        
+        Image applicationIcon;
+        applicationIcon = new Image(getClass().getResourceAsStream("/icons/silo (3).png"));
+        stage.getIcons().add(applicationIcon);
+        
+        scene.getStylesheets().add("/styles/Style.css");
+        
+        stage.setTitle("Silo Bytes");
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
