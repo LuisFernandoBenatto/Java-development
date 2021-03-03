@@ -24,7 +24,7 @@ public class Main {
         arvore.adicionarElemento(81);
         
         arvore.adicionarElemento(88);
-        
+       
         System.out.println("");
         System.out.println("Imprimir em Ordem: ");
         arvore.imprimirEmOrdem(arvore.getRaiz());
@@ -35,12 +35,11 @@ public class Main {
         System.out.println("Imprimir pre-Ordem: ");
         arvore.imprimirPreOrdem(arvore.getRaiz());
         
-        /*
         System.out.println("");
-        System.out.println("Buscando: ");
-        arvore.consultar(92);
-        arvore.consultar(50);
-        */
+        System.out.println("");
+        System.out.println("Consultar: ");
+        System.out.println(arvore.consultar(92));
+        System.out.println(arvore.consultar(14));
         
         System.out.println("");
         System.out.println("");

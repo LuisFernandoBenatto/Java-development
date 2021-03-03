@@ -59,25 +59,25 @@ public class ArvoreBinaria<TIPO extends Comparable> {
             System.out.print(atual.getValor() + " ");
         }   
     }
-    public void consultar(TIPO valor) {
+    public int consultar(TIPO valor) {
         // Busca o elemento na árvore
+        if(raiz == null) {
+            System.out.println("Raiz igual a null");
+            return 0;
+        }
         Elemento<TIPO> atual = this.raiz;
-        Elemento<TIPO> paiAtual = null;
         while(atual != null){
             if(atual.getValor().equals(valor)){
-                System.out.println(atual.getValor());
-                break;
-            } else if(valor.compareTo(atual.getValor()) == -1){
-                // valor procurado é menor que o atual 
-                paiAtual = atual;
+                System.out.print("Valor encontrado: ");
+                return 1;
+            } else if(valor.compareTo(atual.getValor()) == -1){ 
                 atual = atual.getEsquerda();
-                System.out.println(atual.getValor());
             } else {   
-                paiAtual = atual;
                 atual = atual.getDireita();
-                System.out.println(atual.getValor());
             }
-        }    
+        }
+        System.out.print("Valor não encontrado: ");
+        return 0;
     }
     public boolean remover (TIPO valor){
         // Busca o elemento na árvore
