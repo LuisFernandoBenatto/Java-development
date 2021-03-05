@@ -71,18 +71,33 @@
                      </accelerator></MenuItem>
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Usuario">
+        <Menu mnemonicParsing="false" text="Usuário">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario" text="Novo Usuário" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#listaUsuario" text="Lista de Usuários" />
+            <MenuItem mnemonicParsing="false" onAction="#listarUsuario" text="Lista de Usuários" />
+                  <MenuItem mnemonicParsing="false" onAction="#alterarUsuario" text="Alterar Usuários" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#excluirUsuario" text="Excluir Usuários" />
           </items>
         </Menu>
             <Menu mnemonicParsing="false" text="Produtor">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#cadastrarProdutor" text="Novo Produtor" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#listaProdutor" text="Lista de Produtores" />
+                  <MenuItem mnemonicParsing="false" onAction="#listarProdutor" text="Lista de Produtores" />
+                  <MenuItem mnemonicParsing="false" onAction="#alterarProdutor" text="Alterar Produtor" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#excluirProdutor" text="Excluir Produtor" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Silos">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Novo Silo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Consultar Silo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Liberar Silo" />
                </items>
             </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
@@ -115,7 +130,7 @@
                      </effect></Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" stylesheets="@../styles/Style.css" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -129,7 +144,7 @@
                      </effect></Button>
                   <Button layoutX="236.0" layoutY="20.0" mnemonicParsing="false" onAction="#entradaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -143,7 +158,7 @@
                      </effect></Button>
                   <Button layoutX="127.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -157,7 +172,7 @@
                      </effect></Button>
                   <Button layoutX="348.0" layoutY="20.0" mnemonicParsing="false" onAction="#saidaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Saída de Produtos" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -172,7 +187,7 @@
                   </Button>
                   <Button layoutX="460.0" layoutY="20.0" mnemonicParsing="false" onAction="#aReceber" prefHeight="80.0" prefWidth="100.0" text="A Receber" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -194,9 +209,9 @@
                         <Image url="@../images/siloBytes.jpeg" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="24.0" layoutY="57.0" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Controle de aluguel em espaço em silos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="125.0" prefWidth="1359.0" style="-fx-alignment: center;" text="Controle de aluguel em espaço em silos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
-                        <Font name="Edwardian Script ITC" size="90.0" />
+                        <Font name="Times New Roman" size="80.0" />
                      </font>
                      <effect>
                         <DropShadow />
@@ -204,7 +219,7 @@
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="629.0" layoutY="296.0" prefHeight="275.0" prefWidth="734.0" style="-fx-alignment: center;" stylesheets="@../styles/Style.css" text="Silo Bytes" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Edwardian Script ITC" size="200.0" />
+                        <Font name="Times New Roman" size="170.0" />
                      </font>
                      <effect>
                         <DropShadow />

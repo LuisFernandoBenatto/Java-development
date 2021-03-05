@@ -1,58 +1,50 @@
 package data.modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Produtores implements Serializable{
-   private String nomeProdutor;
-   private String produto;
-   private String dataDeEntrada;
-   private String quantidadeDeProduto;
-
-    public Produtores() {
-        this.nomeProdutor = "";
-        this.produto = "";
-        this.dataDeEntrada = "";
-        this.quantidadeDeProduto = "";
+    private String nome;
+    private String cpf;
+    private String telefone;
+    private LocalDate nascimento;
+    
+    public Produtores () {
+        this.nome = "";
+        this.cpf = "";
+        this.telefone = "";
+        this.nascimento = null;
     }
-    public Produtores(String nomeProdutor, String produto, String dataDeEntrada, String quantidadeDeProduto) {
-        this.nomeProdutor = nomeProdutor;
-        this.produto = produto;
-        this.dataDeEntrada = dataDeEntrada;
-        this.quantidadeDeProduto = quantidadeDeProduto;
-    }
-
-    public String getDataDeEntrada() {
-        return dataDeEntrada;
+    public Produtores (String nome, String cpf, LocalDate nascimento, 
+            String telefone){
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.cpf = cpf;
+        this.telefone = telefone;
     }
 
     public String getNomeProdutor() {
-        return nomeProdutor;
+        return nome;
     }
-
-    public String getProduto() {
-        return produto;
+    public String getCPF() {
+        return cpf;
     }
-
-    public String getQuantidadeDeProduto() {
-        return quantidadeDeProduto;
+    public LocalDate getDataNascimento() {
+        return nascimento;
     }
-
-    public void setDataDeEntrada(String dataDeEntrada) {
-        this.dataDeEntrada = dataDeEntrada;
+    public String getTelefone() {
+        return this.telefone;
     }
-
-    public void setNomeProdutor(String nomeProdutor) {
-        this.nomeProdutor = nomeProdutor;
+    public void setNomeProdutor(String nome) {
+        this.nome = nome;
     }
-
-    public void setProduto(String produto) {
-        this.produto = produto;
+    public void setCPF(String cpf) {
+        this.cpf = cpf;
     }
-
-    public void setQuantidadeDeProduto(String quantidadeDeProduto) {
-        this.quantidadeDeProduto = quantidadeDeProduto;
+    public void setDataNascimento(LocalDate nascimento) {
+        this.nascimento = nascimento;
     }
-    
-   
-   
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

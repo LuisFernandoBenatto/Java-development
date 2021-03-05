@@ -34,6 +34,7 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -48,6 +49,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="data.NovoProdutorController">
   <children>
@@ -57,10 +59,12 @@
           <items>
                   <MenuItem mnemonicParsing="false" text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Listar Produtores" />
+            <MenuItem mnemonicParsing="false" onAction="#listarProdutor" onMenuValidation="#listarProdutor" text="Listar Produtores" />
+                  <MenuItem mnemonicParsing="false" onAction="#alterarProdutor" onMenuValidation="#alterarProdutor" text="Alterar Produtor" />
+                  <MenuItem mnemonicParsing="false" onAction="#excluirProdutor" onMenuValidation="#excluirProdutor" text="Excluir Produtor" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#voltar" text="Voltar ao Menu Principal" />
-            <MenuItem mnemonicParsing="false" onAction="#fechar" text="Sair">
+            <MenuItem mnemonicParsing="false" onAction="#voltar" onMenuValidation="#voltar" text="Voltar ao Menu Principal" />
+            <MenuItem mnemonicParsing="false" onAction="#fechar" onMenuValidation="#fechar" text="Sair">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -90,53 +94,48 @@
                   </Lighting>
                </effect>
                <children>
-                  <Button cancelButton="true" layoutX="690.0" layoutY="348.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
+                  <Button cancelButton="true" layoutX="690.0" layoutY="459.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Times New Roman" size="24.0" />
                      </font>
                      <styleClass>
                         <String fx:value="button" />
                         <String fx:value="button" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="497.0" layoutY="348.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Limpar" textAlignment="CENTER">
+                  <Button layoutX="497.0" layoutY="459.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Limpar" textAlignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Times New Roman" size="24.0" />
                      </font>
                   </Button>
-                  <Label layoutX="262.0" layoutY="14.0" text="Nome de Produtor:" textAlignment="CENTER">
+                  <Label layoutX="301.0" layoutY="198.0" text="Nome de Produtor:" textAlignment="CENTER">
                      <font>
-                        <Font name="Edwardian Script ITC" size="64.0" />
+                        <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <Label layoutX="316.0" layoutY="163.0" text="Quant. Produto:" textAlignment="CENTER">
+                  <Label layoutX="324.0" layoutY="311.0" text="Data Nascimento:" textAlignment="CENTER">
                      <font>
-                        <Font name="Edwardian Script ITC" size="64.0" />
+                        <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <Label layoutX="465.0" layoutY="87.0" text="Produto:" textAlignment="CENTER">
+                  <Label layoutX="570.0" layoutY="257.0" text="CPF:" textAlignment="CENTER">
                      <font>
-                        <Font name="Edwardian Script ITC" size="64.0" />
+                        <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoNomeProdutor" layoutX="690.0" layoutY="38.0" prefHeight="40.0" prefWidth="567.0">
+                  <TextField fx:id="campoNomeProdutor" layoutX="690.0" layoutY="205.0" prefHeight="40.0" prefWidth="270.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="campoProduto" layoutX="690.0" layoutY="111.0" prefHeight="40.0" prefWidth="373.0">
+                  <TextField fx:id="campoCPF" layoutX="690.0" layoutY="264.0" prefHeight="40.0" prefWidth="270.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="campoQuantidadeDeProduto" layoutX="690.0" layoutY="187.0" prefHeight="40.0" prefWidth="180.0">
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" opacity="0.6" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo produtor" wrapText="true">
                      <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextField>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="438.0" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo produtor" wrapText="true">
-                     <font>
-                        <Font name="Edwardian Script ITC" size="90.0" />
+                        <Font name="Times New Roman" size="90.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -149,21 +148,22 @@
                         </Lighting>
                      </effect>
                   </Label>
-                  <Label layoutX="278.0" layoutY="245.0" text="Data de Entrada:" textAlignment="CENTER">
+                  <Label layoutX="485.0" layoutY="368.0" text="Telefone:" textAlignment="CENTER">
                      <font>
-                        <Font name="Edwardian Script ITC" size="64.0" />
+                        <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoDataDeEntrada" layoutX="690.0" layoutY="269.0" prefHeight="40.0" prefWidth="180.0">
+                  <TextField fx:id="campoTelelefone" layoutX="690.0" layoutY="375.0" prefHeight="40.0" prefWidth="270.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="883.0" layoutY="163.0" text="em toneladas" textAlignment="CENTER">
+                  <DatePicker fx:id="campoDataNascimento" layoutX="690.0" layoutY="318.0" prefHeight="40.0" prefWidth="270.0" />
+                  <Text fx:id="lblMsg" layoutX="571.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="226.0">
                      <font>
-                        <Font name="Edwardian Script ITC" size="64.0" />
+                        <Font name="Times New Roman" size="18.0" />
                      </font>
-                  </Label>
+                  </Text>
                </children>
             </Pane>
             <Pane maxWidth="1567.0" prefHeight="112.0" prefWidth="1366.0" style="-fx-border-color: #ccc; -fx-max-width: 1366;">
@@ -185,7 +185,7 @@
                   </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -198,9 +198,9 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="349.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="349.0" layoutY="20.0" mnemonicParsing="false" onAction="#entradaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -215,7 +215,7 @@
                   </Button>
                   <Button cancelButton="true" defaultButton="true" layoutX="127.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarProdutor" prefHeight="80.0" prefWidth="100.0" text="Novo Produtor" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -228,9 +228,9 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="239.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Saída de Produtos" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="239.0" layoutY="20.0" mnemonicParsing="false" onAction="#saidaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Saída de Produtos" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
@@ -243,9 +243,9 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="460.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" stylesheets="@../styles/Style.css" text="A Receber" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="460.0" layoutY="20.0" mnemonicParsing="false" onAction="#aReceber" prefHeight="80.0" prefWidth="100.0" stylesheets="@../styles/Style.css" text="A Receber" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Times New Roman" size="16.0" />
                      </font>
                      <effect>
                         <Lighting>
