@@ -5,8 +5,20 @@ import javafx.fxml.FXML;
 
 public class MenuController {
     @FXML
+    private void switchToSecondary() throws IOException {
+        App.setRoot("secondary");
+    }
+    @FXML
     private void cadastrarUsuario() throws IOException{
         App.setRoot("novoUsuario");
+    }
+    @FXML
+    private void cadastrarProdutor() throws IOException{
+        App.setRoot("novoProdutor");
+    }
+    @FXML
+    private void novoSilo() throws IOException{
+        App.setRoot("novoSilo");
     }
     @FXML
     private void listarUsuario() throws IOException{
@@ -19,10 +31,6 @@ public class MenuController {
     @FXML
     private void excluirUsuario() throws IOException{
         App.setRoot("excluirUsuario");
-    }
-    @FXML
-    private void cadastrarProdutor() throws IOException{
-        App.setRoot("novoProdutor");
     }
     @FXML
     private void listarProdutor() throws IOException{

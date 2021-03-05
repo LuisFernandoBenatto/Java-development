@@ -3,44 +3,24 @@ package data;
 import data.modelo.Usuarios;
 import data.util.ArquivoUsuario;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
-public class NovoUsuarioController {
+public class ListarUsuarioController {
     @FXML
-    private TextField campoLogin;
-
-    @FXML
-    private TextField campoNomeUsuario;
-
-    @FXML
-    private TextField campoSenha;
+    private TextArea inputList;
     
     @FXML
-    private Label labelMensagem;
+    private void listagemUsuario(){
+        ArrayList<Usuarios> lista = ArquivoUsuario.listar();
     
-    @FXML
-    private void cadastrarUsuario(){
-        Usuarios usuario = new Usuarios();
-        usuario.setLogin(campoLogin.getText());
-        usuario.setNome(campoNomeUsuario.getText());
-        usuario.setSenha(campoSenha.getText());
-        try {
-            ArquivoUsuario.inserir(usuario);
-            labelMensagem.setText("Cadastrado com sucesso!");
-            limparCampos();
-        } catch (Exception e) {
-            limparCampos();
-            labelMensagem.setText("Erro ao cadastrar!");
-        }  
-    }  
-    @FXML
-    private void limparCampos(){
-        this.campoLogin.setText("");
-        this.campoNomeUsuario.setText("");
-        this.campoSenha.setText("");
-    }   
+        for(Usuarios u : lista){
+            inputList.appendText("Nome: "+u.getNome()+"   ");
+            inputList.appendText("Login: "+u.getLogin()+"    ");
+            inputList.appendText("Senha: "+u.getSenha()+"\n\n"); 
+        }
+    }
     @FXML
     private void voltar() throws IOException{
         App.setRoot("menu");
@@ -51,9 +31,9 @@ public class NovoUsuarioController {
     } 
     /*------------------------------------------------------------------------*/
     @FXML
-    private void listarUsuario() throws IOException{
-        App.setRoot("listarUsuario");
-    }
+    private void cadastrarUsuario() throws IOException{
+        App.setRoot("novoUsuario");
+    } 
     @FXML
     private void alterarUsuario() throws IOException{
         App.setRoot("alterarUsuario");

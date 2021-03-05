@@ -19,7 +19,7 @@ public class NovoProdutorController {
     private DatePicker campoDataNascimento;
     
     @FXML
-    private TextField campoTelelefone;
+    private TextField campoTelefone;
     
     @FXML
     private Label lblMsg;
@@ -31,7 +31,7 @@ public class NovoProdutorController {
         produtor.setNomeProdutor(campoNomeProdutor.getText());
         produtor.setCPF(campoCPF.getText());
         produtor.setDataNascimento(campoDataNascimento.getValue());
-        produtor.setTelefone(campoTelelefone.getText());
+        produtor.setTelefone(campoTelefone.getText());
         try {
             ArquivoProdutor.inserir(produtor);
             this.limparCampos();
@@ -46,7 +46,7 @@ public class NovoProdutorController {
         this.campoNomeProdutor.setText("");
         this.campoCPF.setText("");
         this.campoDataNascimento.getEditor().clear();
-        this.campoTelelefone.setText("");
+        this.campoTelefone.setText("");
     }
     
     @FXML

@@ -56,7 +56,7 @@
       <menus>
         <Menu mnemonicParsing="false" text="Arquivo">
           <items>
-                  <MenuItem mnemonicParsing="false" text="Armazenagem Existentes" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario"  text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#entradaDeProdutos" text="Entrada de Produtos" />
                   <MenuItem mnemonicParsing="false" onAction="#saidaDeProdutos" text="Saída de Produtos" />
@@ -93,7 +93,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Silos">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Novo Silo" />
+                  <MenuItem mnemonicParsing="false" onAction="#novoSilo" text="Novo Silo" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Consultar Silo" />
                   <SeparatorMenuItem mnemonicParsing="false" />

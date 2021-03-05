@@ -32,14 +32,13 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -50,7 +49,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="data.NovoUsuarioController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="data.ListarProdutorController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -58,12 +57,12 @@
           <items>
                   <MenuItem mnemonicParsing="false" text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#listarUsuario" onMenuValidation="#listarUsuario" text="Listar Usuários" />
-                  <MenuItem mnemonicParsing="false" onAction="#alterarUsuario" onMenuValidation="#alterarUsuario" text="Alterar Usuários" />
-                  <MenuItem mnemonicParsing="false" onAction="#excluirUsuario" onMenuValidation="#excluirUsuario" text="Excluir Usuários" />
+            <MenuItem disable="true" mnemonicParsing="false" text="Listar Produtores" />
+                  <MenuItem mnemonicParsing="false" onAction="#alterarProdutor" text="Alterar Produtor" />
+                  <MenuItem mnemonicParsing="false" onAction="#excluirProdutor" text="Excluir Produtor" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#voltar" onMenuValidation="#voltar" text="Voltar ao Menu Principal" />
-            <MenuItem mnemonicParsing="false" onAction="#fechar" onMenuValidation="#fechar" text="Sair">
+            <MenuItem mnemonicParsing="false" onAction="#voltar" text="Voltar ao Menu Principal" />
+            <MenuItem mnemonicParsing="false" onAction="#fechar" text="Sair">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -93,51 +92,7 @@
                   </Lighting>
                </effect>
                <children>
-                  <Button cancelButton="true" layoutX="691.0" layoutY="455.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
-                     <font>
-                        <Font name="Times New Roman" size="24.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="button" />
-                        <String fx:value="button" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="497.0" layoutY="455.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Limpar" textAlignment="CENTER">
-                     <font>
-                        <Font name="Times New Roman" size="24.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="313.0" layoutY="244.0" text="Nome de Usuário:" textAlignment="CENTER">
-                     <font>
-                        <Font name="Times New Roman" size="48.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="537.0" layoutY="352.0" text="Senha:" textAlignment="CENTER">
-                     <font>
-                        <Font name="Times New Roman" size="48.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="539.0" layoutY="302.0" text="Login:" textAlignment="CENTER">
-                     <font>
-                        <Font name="Times New Roman" size="48.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="campoNomeUsuario" layoutX="691.0" layoutY="251.0" prefHeight="40.0" prefWidth="270.0">
-                     <font>
-                        <Font name="Times New Roman" size="18.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="campoLogin" layoutX="691.0" layoutY="309.0" prefHeight="40.0" prefWidth="270.0">
-                     <font>
-                        <Font name="Times New Roman" size="18.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="campoSenha" layoutX="691.0" layoutY="359.0" prefHeight="40.0" prefWidth="270.0" promptText="*******************">
-                     <font>
-                        <Font name="Times New Roman" size="18.0" />
-                     </font>
-                  </TextField>
-                  <Label alignment="CENTER" layoutX="21.0" layoutY="14.0" opacity="0.4" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo usuário" wrapText="true">
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" opacity="0.4" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Listar produtor" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="90.0" />
                      </font>
@@ -152,11 +107,17 @@
                         </Lighting>
                      </effect>
                   </Label>
-                  <Text layoutX="571.0" layoutY="441.0" opacity="0.2" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="226.0">
+                  <Text layoutX="571.0" layoutY="446.0" opacity="0.2" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="226.0">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
+                  <TextArea fx:id="inputList" layoutX="366.0" layoutY="139.0" prefHeight="300.0" prefWidth="624.0" />
+                  <Button layoutX="594.0" layoutY="458.0" mnemonicParsing="false" onAction="#listagemProdutores" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Listar" textAlignment="CENTER">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
             <Pane maxWidth="1567.0" prefHeight="112.0" prefWidth="1366.0" style="-fx-border-color: #ccc; -fx-max-width: 1366;">
@@ -176,7 +137,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button alignment="CENTER" cancelButton="true" contentDisplay="CENTER" defaultButton="true" layoutX="16.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="20.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="80.0" prefWidth="100.0" text="Novo Usuário" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>

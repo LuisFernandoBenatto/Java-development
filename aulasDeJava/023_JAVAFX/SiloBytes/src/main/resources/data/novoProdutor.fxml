@@ -128,12 +128,12 @@
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="campoCPF" layoutX="690.0" layoutY="264.0" prefHeight="40.0" prefWidth="270.0">
+                  <TextField fx:id="campoCPF" layoutX="690.0" layoutY="264.0" prefHeight="40.0" prefWidth="270.0" promptText="000.000.000-00">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" opacity="0.6" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo produtor" wrapText="true">
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" opacity="0.4" prefHeight="125.0" prefWidth="1339.0" style="-fx-alignment: center;" text="Cadastro de novo produtor" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="90.0" />
                      </font>
@@ -153,13 +153,13 @@
                         <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoTelelefone" layoutX="690.0" layoutY="375.0" prefHeight="40.0" prefWidth="270.0">
+                  <TextField fx:id="campoTelefone" layoutX="690.0" layoutY="375.0" prefHeight="40.0" prefWidth="270.0" promptText="(00) 00000-0000">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <DatePicker fx:id="campoDataNascimento" layoutX="690.0" layoutY="318.0" prefHeight="40.0" prefWidth="270.0" />
-                  <Text fx:id="lblMsg" layoutX="571.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="226.0">
+                  <DatePicker fx:id="campoDataNascimento" layoutX="690.0" layoutY="318.0" prefHeight="40.0" prefWidth="270.0" promptText="00/00/0000" />
+                  <Text layoutX="571.0" layoutY="446.0" opacity="0.2" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="226.0">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font>
