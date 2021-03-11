@@ -3,7 +3,6 @@ package data;
 import data.modelo.Armazenagem;
 import data.util.ArquivoSilo;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -21,12 +20,6 @@ public class NovoSiloController {
     @FXML
     private CheckBox campoAlugado;
 
-    @FXML
-    private Button btnLimpar;
-
-    @FXML
-    private Button btnCadastrar;
-    
     @FXML
     private Slider campoCapacidade;
     

@@ -4,7 +4,6 @@ import data.modelo.Armazenagem;
 import data.util.ArquivoSilo;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -25,12 +24,6 @@ public class ConsultaSiloController {
 
     @FXML
     private Slider sliderDisponivel;
-
-//    @FXML
-//    private Button btnProximo;
-//
-//    @FXML
-//    private Button btnAnterior;
     
     @FXML
     public void initialize(){
