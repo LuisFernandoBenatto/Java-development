@@ -56,7 +56,7 @@
       <menus>
         <Menu mnemonicParsing="false" text="Arquivo">
           <items>
-                  <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario"  text="Armazenagem Existentes" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario" text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#entradaDeProdutos" text="Entrada de Produtos" />
                   <MenuItem mnemonicParsing="false" onAction="#saidaDeProdutos" text="Saída de Produtos" />
@@ -102,7 +102,7 @@
             </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
           <items>
-            <MenuItem mnemonicParsing="false" text="Ajuda">
+            <MenuItem mnemonicParsing="false" onAction="#ajuda" text="Ajuda">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>

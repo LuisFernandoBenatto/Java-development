@@ -69,7 +69,7 @@
                      </accelerator></MenuItem>
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Ajuda">
+        <Menu mnemonicParsing="false" onAction="#ajuda" text="Ajuda">
           <items>
             <MenuItem mnemonicParsing="false" text="Ajuda">
                      <accelerator>
@@ -81,7 +81,7 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Pane layoutY="112.0" opacity="0.9" prefHeight="577.0" prefWidth="1367.0" style="-fx-background-color: #fff; -fx-border-color: #bbb;">
+            <Pane layoutY="112.0" onDragDetected="#ajuda" opacity="0.9" prefHeight="577.0" prefWidth="1367.0" style="-fx-background-color: #fff; -fx-border-color: #bbb;">
                <effect>
                   <Lighting>
                      <bumpInput>

@@ -84,4 +84,8 @@ public class ExcluirUsuarioController {
     private void aReceber() throws IOException{
         App.setRoot("aReceber");
     }
+    @FXML
+    private void ajuda() throws IOException{
+        App.setRoot("ajuda");
+    }
 }

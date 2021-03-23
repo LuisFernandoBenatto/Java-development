@@ -57,6 +57,10 @@ public class MenuController {
         App.setRoot("aReceber");
     }
     @FXML
+    private void ajuda() throws IOException{
+        App.setRoot("ajuda");
+    }
+    @FXML
     private void sair(){
         System.exit(0);
     }

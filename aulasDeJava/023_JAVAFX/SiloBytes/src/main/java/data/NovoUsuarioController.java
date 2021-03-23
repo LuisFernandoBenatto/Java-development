@@ -75,6 +75,10 @@ public class NovoUsuarioController {
         App.setRoot("saidaDeProdutos");
     }
     @FXML
+    private void ajuda() throws IOException{
+        App.setRoot("ajuda");
+    }
+    @FXML
     private void aReceber() throws IOException{
         App.setRoot("aReceber");
     }
