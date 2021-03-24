@@ -6,8 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
-public class ListarProdutorController {
+public class ExcluirProdutorController {
+    @FXML
+    private TextField campoID_;
+    
     @FXML
     private TextArea inputList;
     
@@ -22,6 +26,25 @@ public class ListarProdutorController {
             inputList.appendText("DataNascimento: " + p.getDataNascimento() + " | ");
             inputList.appendText("Telelefone: " + p.getTelefone() + "\n\n"); 
         }
+    }
+    
+    @FXML
+    private void excluirProdutor() throws IOException{
+        Produtores produtor = new Produtores();
+        produtor.setID(campoID_.getText());
+        try {
+            ArquivoProdutor.excluir(campoID_.getText(), produtor);
+            this.limparCampos();
+        } catch (Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        }    
+    }
+    
+    @FXML
+    private void limparCampos(){
+        this.campoID_.setText("");
+        this.inputList.setText("");
     }
     
     @FXML
@@ -47,8 +70,8 @@ public class ListarProdutorController {
         App.setRoot("alterarProdutor");
     }
     @FXML
-    private void excluirProdutor() throws IOException{
-        App.setRoot("excluirProdutor");
+    private void listarProdutor() throws IOException{
+        App.setRoot("listarProdutor");
     }
     @FXML
     private void entradaDeProdutos() throws IOException{

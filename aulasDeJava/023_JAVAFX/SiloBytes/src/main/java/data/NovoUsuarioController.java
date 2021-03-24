@@ -9,6 +9,9 @@ import javafx.scene.control.TextField;
 
 public class NovoUsuarioController {
     @FXML
+    private TextField campoID;
+    
+    @FXML
     private TextField campoLogin;
 
     @FXML
@@ -23,6 +26,7 @@ public class NovoUsuarioController {
     @FXML
     private void cadastrarUsuario(){
         Usuarios usuario = new Usuarios();
+        usuario.setId(campoID.getText());
         usuario.setLogin(campoLogin.getText());
         usuario.setNome(campoNomeUsuario.getText());
         usuario.setSenha(campoSenha.getText());
@@ -37,6 +41,7 @@ public class NovoUsuarioController {
     }  
     @FXML
     private void limparCampos(){
+        this.campoID.setText("");
         this.campoLogin.setText("");
         this.campoNomeUsuario.setText("");
         this.campoSenha.setText("");

@@ -81,7 +81,7 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Pane layoutY="112.0" onDragDetected="#ajuda" opacity="0.9" prefHeight="577.0" prefWidth="1367.0" style="-fx-background-color: #fff; -fx-border-color: #bbb;">
+            <Pane layoutY="112.0" opacity="0.9" prefHeight="577.0" prefWidth="1367.0" style="-fx-background-color: #fff; -fx-border-color: #bbb;">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -122,7 +122,7 @@
                         <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoNomeUsuario" layoutX="691.0" layoutY="251.0" prefHeight="40.0" prefWidth="270.0">
+                  <TextField fx:id="campoNomeUsuario" layoutX="691.0" layoutY="258.0" prefHeight="40.0" prefWidth="270.0">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font>
@@ -157,6 +157,16 @@
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
+                  <TextField fx:id="campoID" layoutX="691.0" layoutY="204.0" prefHeight="40.0" prefWidth="270.0">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="601.0" layoutY="190.0" text="ID:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Times New Roman" size="48.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane maxWidth="1567.0" prefHeight="112.0" prefWidth="1366.0" style="-fx-border-color: #ccc; -fx-max-width: 1366;">

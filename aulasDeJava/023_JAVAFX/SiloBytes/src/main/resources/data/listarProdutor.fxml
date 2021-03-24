@@ -112,7 +112,7 @@
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
-                  <TextArea fx:id="inputList" layoutX="366.0" layoutY="139.0" prefHeight="300.0" prefWidth="624.0" />
+                  <TextArea fx:id="inputList" editable="false" focusTraversable="false" layoutX="366.0" layoutY="139.0" prefHeight="300.0" prefWidth="624.0" />
                   <Button layoutX="594.0" layoutY="458.0" mnemonicParsing="false" onAction="#listagemProdutores" prefHeight="90.0" prefWidth="180.0" stylesheets="@../styles/Style.css" text="Listar" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="24.0" />

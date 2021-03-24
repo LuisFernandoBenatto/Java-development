@@ -15,9 +15,7 @@ data\ExcluirUsuarioController.class
 data\util\ArquivoProdutor.class
 data\PrimaryController.class
 data\SecondaryController.class
-data\ConsultaProdutorController.class
 data\util\ArquivoAluguel.class
 data\modelo\Produtores.class
-data\ConsultaSiloController.class
 data\util\ArquivoSilo.class
 data\NovoSiloController.class

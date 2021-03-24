@@ -10,6 +10,9 @@ import javafx.scene.control.TextField;
 
 public class AlterarUsuarioController {
     @FXML
+    private TextField campoID_;
+    
+    @FXML
     private TextField campoLogin;
 
     @FXML
@@ -26,26 +29,34 @@ public class AlterarUsuarioController {
         ArrayList<Usuarios> lista = ArquivoUsuario.listar();
     
         for(Usuarios u : lista){
-            inputList.appendText("Nome: "+u.getNome()+"   ");
-            inputList.appendText("Login: "+u.getLogin()+"    ");
+            inputList.appendText("ID: "+u.getId()+" | ");
+            inputList.appendText("Nome: "+u.getNome()+" | ");
+            inputList.appendText("Login: "+u.getLogin()+" | ");
             inputList.appendText("Senha: "+u.getSenha()+"\n\n"); 
         }
     }
     @FXML
-    private void alterarCadastroUsuario(){
-        Usuarios usuario = new Usuarios();
-        usuario.setLogin(campoLogin.getText());
-        usuario.setNome(campoNomeUsuario.getText());
-        usuario.setSenha(campoSenha.getText());
-        //ArquivoUsuario.inserir(usuario);
-        this.limparCampos();
+    private void alterarCadastroUsuario() throws IOException{
+        Usuarios novoUsuario = new Usuarios();
+        novoUsuario.setLogin(campoLogin.getText());
+        novoUsuario.setNome(campoNomeUsuario.getText());
+        novoUsuario.setSenha(campoSenha.getText());
+        try {
+            ArquivoUsuario.alterar(campoID_.getText(), novoUsuario);
+            this.limparCampos();
+        } catch(Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        }
     }  
     
     @FXML
     private void limparCampos(){
+        this.campoID_.setText("");
         this.campoLogin.setText("");
         this.campoNomeUsuario.setText("");
         this.campoSenha.setText("");
+        this.inputList.setText("");
     }   
     @FXML
     private void voltar() throws IOException{

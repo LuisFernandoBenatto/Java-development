@@ -164,6 +164,16 @@
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
+                  <TextField fx:id="campoID" layoutX="690.0" layoutY="146.0" prefHeight="40.0" prefWidth="270.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="605.0" layoutY="139.0" text="ID:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Times New Roman" size="48.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane maxWidth="1567.0" prefHeight="112.0" prefWidth="1366.0" style="-fx-border-color: #ccc; -fx-max-width: 1366;">

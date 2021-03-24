@@ -10,13 +10,7 @@ import javafx.scene.control.TextField;
 
 public class ExcluirUsuarioController {
     @FXML
-    private TextField campoLogin;
-
-    @FXML
-    private TextField campoNomeUsuario;
-
-    @FXML
-    private TextField campoSenha;
+    private TextField campoID;
     
     @FXML
     private TextArea inputList;
@@ -26,27 +20,31 @@ public class ExcluirUsuarioController {
         ArrayList<Usuarios> lista = ArquivoUsuario.listar();
     
         for(Usuarios u : lista){
-            inputList.appendText("Nome: "+u.getNome()+"   ");
-            inputList.appendText("Login: "+u.getLogin()+"    ");
+            inputList.appendText("ID: "+u.getId()+" | ");
+            inputList.appendText("Nome: "+u.getNome()+" | ");
+            inputList.appendText("Login: "+u.getLogin()+" | ");
             inputList.appendText("Senha: "+u.getSenha()+"\n\n"); 
         }
     }
+    
     @FXML
-    private void excluirUsuario(){
+    private void excluirUsuario() throws IOException{ 
         Usuarios usuario = new Usuarios();
-        usuario.setLogin(campoLogin.getText());
-        usuario.setNome(campoNomeUsuario.getText());
-        usuario.setSenha(campoSenha.getText());
-        //ArquivoUsuario.inserir(usuario);
-        this.limparCampos();
+        usuario.setLogin(campoID.getText());
+        try {
+            ArquivoUsuario.excluir(campoID.getText(), usuario);
+            this.limparCampos();
+        } catch(Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        }
     }  
     
     @FXML
     private void limparCampos(){
-        this.campoLogin.setText("");
-        this.campoNomeUsuario.setText("");
-        this.campoSenha.setText("");
-    }   
+        this.campoID.setText("");
+        this.inputList.setText("");
+    }    
     @FXML
     private void voltar() throws IOException{
         App.setRoot("menu");

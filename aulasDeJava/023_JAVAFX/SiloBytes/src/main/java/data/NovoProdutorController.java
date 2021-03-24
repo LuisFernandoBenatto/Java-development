@@ -9,6 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class NovoProdutorController {
+    
+    @FXML
+    private TextField campoID;
+    
     @FXML
     private TextField campoNomeProdutor;
 
@@ -28,6 +32,7 @@ public class NovoProdutorController {
     @FXML
     private void cadastrarProdutor(){
         Produtores produtor = new Produtores();
+        produtor.setID(campoID.getText());
         produtor.setNomeProdutor(campoNomeProdutor.getText());
         produtor.setCPF(campoCPF.getText());
         produtor.setDataNascimento(campoDataNascimento.getValue());
@@ -43,6 +48,7 @@ public class NovoProdutorController {
     
     @FXML
     private void limparCampos(){
+        this.campoID.setText("");
         this.campoNomeProdutor.setText("");
         this.campoCPF.setText("");
         this.campoDataNascimento.getEditor().clear();

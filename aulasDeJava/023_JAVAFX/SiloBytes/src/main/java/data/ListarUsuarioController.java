@@ -16,11 +16,16 @@ public class ListarUsuarioController {
         ArrayList<Usuarios> lista = ArquivoUsuario.listar();
     
         for(Usuarios u : lista){
-            inputList.appendText("Nome: "+u.getNome()+"   ");
-            inputList.appendText("Login: "+u.getLogin()+"    ");
+            inputList.appendText("ID: "+u.getId()+" | ");
+            inputList.appendText("Nome: "+u.getNome()+" | ");
+            inputList.appendText("Login: "+u.getLogin()+" | ");
             inputList.appendText("Senha: "+u.getSenha()+"\n\n"); 
         }
     }
+    @FXML
+    private void limparCampos(){
+        this.inputList.setText("");
+    }   
     @FXML
     private void voltar() throws IOException{
         App.setRoot("menu");

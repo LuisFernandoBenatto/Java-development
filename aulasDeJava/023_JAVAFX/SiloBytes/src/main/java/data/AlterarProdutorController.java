@@ -5,9 +5,27 @@ import data.util.ArquivoProdutor;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
-public class ListarProdutorController {
+public class AlterarProdutorController {
+    
+    @FXML
+    private TextField campoID_;
+    
+    @FXML
+    private TextField campoNomeProdutor;
+
+    @FXML
+    private TextField campoCPF;
+
+    @FXML
+    private DatePicker campoDataNascimento;
+    
+    @FXML
+    private TextField campoTelefone;
+    
     @FXML
     private TextArea inputList;
     
@@ -22,6 +40,32 @@ public class ListarProdutorController {
             inputList.appendText("DataNascimento: " + p.getDataNascimento() + " | ");
             inputList.appendText("Telelefone: " + p.getTelefone() + "\n\n"); 
         }
+    }
+    
+    @FXML
+    private void alterarProdutor() throws IOException{
+        Produtores produtor = new Produtores();
+        produtor.setNomeProdutor(campoNomeProdutor.getText());
+        produtor.setCPF(campoCPF.getText());
+        produtor.setDataNascimento(campoDataNascimento.getValue());
+        produtor.setTelefone(campoTelefone.getText());
+        try {
+            ArquivoProdutor.alterar(campoID_.getText(), produtor);
+            this.limparCampos();
+        } catch (Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        }   
+    }
+    
+    @FXML
+    private void limparCampos(){
+        this.campoID_.setText("");
+        this.campoNomeProdutor.setText("");
+        this.campoCPF.setText("");
+        this.campoDataNascimento.getEditor().clear();
+        this.campoTelefone.setText("");
+        this.inputList.setText("");
     }
     
     @FXML
@@ -43,8 +87,8 @@ public class ListarProdutorController {
         App.setRoot("novoProdutor");
     }
     @FXML
-    private void alterarProdutor() throws IOException{
-        App.setRoot("alterarProdutor");
+    private void listarProdutor() throws IOException{
+        App.setRoot("listarProdutor");
     }
     @FXML
     private void excluirProdutor() throws IOException{

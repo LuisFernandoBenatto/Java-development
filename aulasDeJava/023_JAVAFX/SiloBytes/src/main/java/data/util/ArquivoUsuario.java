@@ -52,45 +52,42 @@ public class ArquivoUsuario {
         }
         return lista;
     }
-    /*
-    public static void inserirP(Produtores produtor) {
-        try {
-            ArrayList<Produtores> atual = listarP();
-            atual.add(produtor);
-            FileOutputStream fos = 
-                                new FileOutputStream(Info.ARQUIVO_PRODUTOR);
-            try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-                oos.writeObject(atual);
-                oos.close();
-            }          
-        } catch (IOException ex) {
-            System.out.println("Erro ao inserir o produtor!" + ex);
-        }
-    }
-    public static ArrayList<Produtores> listarP() {
-        ArrayList<Produtores> lista = new ArrayList();
-        FileInputStream fis = null;
-        try {
-            fis = new FileInputStream(Info.ARQUIVO_PRODUTOR);
-                try (ObjectInputStream ois = new ObjectInputStream(fis)) {
-                    lista = (ArrayList<Produtores>) ois.readObject();
-                    ois.close();
-                }
-            return lista;
-        } catch (FileNotFoundException e) {
-            System.out.println("Arquivo não encontrado!");
-        } catch (EOFException e) {  // arquivo vazio
-            return lista;
-        } catch (IOException | ClassNotFoundException e) {
-
-        } finally {
-            try {
-                fis.close();
-            } catch (IOException ex) {
-                System.out.println("Erro ao ler arquivo!");
+    public static boolean excluir(String ID, Usuarios usuario){
+        ArrayList<Usuarios> lista = ArquivoUsuario.listar();
+        for(Usuarios u : lista){
+            if(u.getId().equals(ID)){  
+                lista.remove(u);
+                try {
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_USUARIO);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                    return true;
+                } catch (IOException ex) {
+                    System.out.println("Erro ao excluir usuário!");
+                    return false;
+                }            
             }
         }
-        return lista;
+        return false;
     }
-    */
+    
+    public static void alterar(String ID, Usuarios novoUsuario){
+        ArrayList<Usuarios> lista = ArquivoUsuario.listar();
+        for(Usuarios u : lista){   
+            if(u.getId().equals(ID)){  
+                u.setNome(novoUsuario.getNome());
+                u.setLogin(novoUsuario.getLogin());
+                u.setSenha(novoUsuario.getSenha());
+                try {
+                    FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_USUARIO);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(lista);
+                    oos.close();
+                } catch (IOException ex) {
+                    System.out.println("Erro ao alterar o usuário!");
+                }
+            }
+        }
+    }
 }
