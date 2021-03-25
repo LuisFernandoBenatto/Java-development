@@ -9,6 +9,7 @@ public class Produtores implements Serializable{
     private String cpf;
     private String telefone;
     private LocalDate nascimento;
+    private double divida;
     
     public Produtores () {
         this.ID = "";
@@ -16,14 +17,16 @@ public class Produtores implements Serializable{
         this.cpf = "";
         this.telefone = "";
         this.nascimento = null;
+        this.divida = 0.0;
     }
     public Produtores (String ID, String nome, String cpf, LocalDate nascimento, 
-            String telefone){
+            String telefone, double divida){
         this.ID = ID;
         this.nome = nome;
         this.nascimento = nascimento;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.divida = divida;
     }
 
     public String getID() {
@@ -55,5 +58,17 @@ public class Produtores implements Serializable{
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    public double getDivida(){
+        return divida;
+    }
+    public void setDivida(double divida) {
+        this.divida = divida;
+    }
+    public void setDividaMaior(double divida) {
+        this.divida = this.divida + divida;
+    }
+    public void setDividaMenor(double divida) {
+        this.divida = this.divida - divida;
     }
 }
