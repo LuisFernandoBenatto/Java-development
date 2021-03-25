@@ -1,6 +1,9 @@
 package data;
 
+import data.modelo.Produtores;
+import data.util.ArquivoProdutor;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -28,6 +31,30 @@ public class NovoSiloController {
     
     @FXML
     private DatePicker campoDataSaida;
+    
+    
+    @FXML
+    private void listagemProdutores(){
+        ArrayList<Produtores> lista = ArquivoProdutor.listar();
+    
+        for(Produtores p : lista){
+            inputList.appendText("ID: " + p.getID() + " | ");
+            inputList.appendText("Nome Produtor: " + p.getNomeProdutor() + " | ");
+            inputList.appendText("CPF: " + p.getCPF() + " | ");
+            inputList.appendText("DataNascimento: " + p.getDataNascimento() + " | ");
+            inputList.appendText("Telelefone: " + p.getTelefone() + "\n\n"); 
+        }
+    }
+    @FXML
+    private void limparCampos(){
+        this.campoNumeroDaVenda.setText("");
+        this.campoCPF_Produtor.setText("");
+        this.campoGrao.setText("");
+        this.campoQuantidade.setText("");
+        this.campoDataEntrada.getEditor().clear();
+        this.campoDataSaida.getEditor().clear();
+        this.inputList.setText("");
+    }
     
     /*------------------------------------------------------------------------*/
     @FXML

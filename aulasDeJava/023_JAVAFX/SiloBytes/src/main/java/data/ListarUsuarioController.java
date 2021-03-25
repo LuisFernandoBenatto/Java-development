@@ -25,7 +25,7 @@ public class ListarUsuarioController {
     @FXML
     private void limparCampos(){
         this.inputList.setText("");
-    }   
+    }  
     @FXML
     private void voltar() throws IOException{
         App.setRoot("menu");

@@ -1,6 +1,9 @@
 package data;
 
+import data.modelo.Armazenagem;
+import data.util.ArquivoSilo;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -29,8 +32,30 @@ public class ConsultarSiloController {
     @FXML
     private DatePicker campoDataSaida;
     
+    @FXML
+    private void listagemDosSilos(){
+        ArrayList<Armazenagem> lista = ArquivoSilo.listar();
     
+        for(Armazenagem a : lista){
+            inputList.appendText("Numero Da Venda: " + a.getNumeroDaVenda() + " | ");
+            inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | ");
+            inputList.appendText("Grão: " + a.getGrao() + " | ");
+            inputList.appendText("Quantidade: " + a.getQuantidade() + " | ");
+            inputList.appendText("DataEntrada: " + a.getDataEntrada() + " | ");
+            inputList.appendText("DataSaída: " + a.getDataSaida() + "\n\n");
+        }
+    }
     
+    @FXML
+    private void limparCampos(){
+        this.campoNumeroDaVenda.setText("");
+        this.campoCPF_Produtor.setText("");
+        this.campoGrao.setText("");
+        this.campoQuantidade.setText("");
+        this.campoDataEntrada.getEditor().clear();
+        this.campoDataSaida.getEditor().clear();
+        this.inputList.setText("");
+    }
     
     /*------------------------------------------------------------------------*/
     @FXML
