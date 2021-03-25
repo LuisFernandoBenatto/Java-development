@@ -13,8 +13,6 @@ data\NovoProdutorController.class
 data\util\Info.class
 data\ExcluirUsuarioController.class
 data\util\ArquivoProdutor.class
-data\PrimaryController.class
-data\SecondaryController.class
 data\util\ArquivoAluguel.class
 data\modelo\Produtores.class
 data\util\ArquivoSilo.class
