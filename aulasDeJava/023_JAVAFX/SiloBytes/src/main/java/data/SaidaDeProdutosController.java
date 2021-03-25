@@ -3,7 +3,11 @@ package data;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class MenuController {
+public class SaidaDeProdutosController {
+    
+    
+    
+    /*------------------------------------------------------------------------*/
     @FXML
     private void cadastrarUsuario() throws IOException{
         App.setRoot("novoUsuario");
@@ -17,28 +21,12 @@ public class MenuController {
         App.setRoot("novoSilo");
     }
     @FXML
-    private void listarUsuario() throws IOException{
-        App.setRoot("listarUsuario");
+    private void consultarSilo() throws IOException{
+        App.setRoot("consultarSilo");
     }
     @FXML
-    private void alterarUsuario() throws IOException{
-        App.setRoot("alterarUsuario");
-    }
-    @FXML
-    private void excluirUsuario() throws IOException{
-        App.setRoot("excluirUsuario");
-    }
-    @FXML
-    private void listarProdutor() throws IOException{
-        App.setRoot("listarProdutor");
-    }
-    @FXML
-    private void alterarProdutor() throws IOException{
-        App.setRoot("alterarProdutor");
-    }
-    @FXML
-    private void excluirProdutor() throws IOException{
-        App.setRoot("excluirProdutor");
+    private void saidaDeProduto() throws IOException{
+        App.setRoot("saidaDeProduto");
     }
     @FXML
     private void entradaDeProdutos() throws IOException{
@@ -55,6 +43,10 @@ public class MenuController {
     @FXML
     private void ajuda() throws IOException{
         App.setRoot("ajuda");
+    }
+    @FXML
+    private void voltar() throws IOException{
+        App.setRoot("menu");
     }
     @FXML
     private void sair(){

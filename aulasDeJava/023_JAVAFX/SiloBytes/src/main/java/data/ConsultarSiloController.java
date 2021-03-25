@@ -2,8 +2,37 @@ package data;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
-public class MenuController {
+public class ConsultarSiloController {
+    
+    @FXML
+    private TextArea inputList;
+    
+    @FXML
+    private TextField campoNumeroDaVenda;
+    
+    @FXML
+    private TextField campoCPF_Produtor;
+
+    @FXML
+    private TextField campoGrao;
+    
+    @FXML
+    private TextField campoQuantidade;
+
+    @FXML
+    private DatePicker campoDataEntrada;
+    
+    @FXML
+    private DatePicker campoDataSaida;
+    
+    
+    
+    
+    /*------------------------------------------------------------------------*/
     @FXML
     private void cadastrarUsuario() throws IOException{
         App.setRoot("novoUsuario");
@@ -17,28 +46,12 @@ public class MenuController {
         App.setRoot("novoSilo");
     }
     @FXML
-    private void listarUsuario() throws IOException{
-        App.setRoot("listarUsuario");
+    private void consultarSilo() throws IOException{
+        App.setRoot("consultarSilo");
     }
     @FXML
-    private void alterarUsuario() throws IOException{
-        App.setRoot("alterarUsuario");
-    }
-    @FXML
-    private void excluirUsuario() throws IOException{
-        App.setRoot("excluirUsuario");
-    }
-    @FXML
-    private void listarProdutor() throws IOException{
-        App.setRoot("listarProdutor");
-    }
-    @FXML
-    private void alterarProdutor() throws IOException{
-        App.setRoot("alterarProdutor");
-    }
-    @FXML
-    private void excluirProdutor() throws IOException{
-        App.setRoot("excluirProdutor");
+    private void saidaDeProduto() throws IOException{
+        App.setRoot("saidaDeProduto");
     }
     @FXML
     private void entradaDeProdutos() throws IOException{
@@ -55,6 +68,10 @@ public class MenuController {
     @FXML
     private void ajuda() throws IOException{
         App.setRoot("ajuda");
+    }
+    @FXML
+    private void voltar() throws IOException{
+        App.setRoot("menu");
     }
     @FXML
     private void sair(){
