@@ -11,27 +11,27 @@ import javafx.scene.control.TextArea;
 public class SaidaDeProdutosController {
     
     @FXML
-    private TextArea campoLista;
+    private TextArea inputList;
     
     
     @FXML
     private void listar(ActionEvent even){
         ArrayList<Armazenagem> lista = ArquivoSilo.listar();
+        
         for(Armazenagem a : lista){
-            campoLista.appendText(" Codigo da Venda: " + a.getNumeroDaVenda() + 
-                    "\t Vendedor:" + a.getVendedorNome() +
-                    "\t CPF do Produtor: " + a.getCPF_Produtor() + 
-                    "\n\t Grão: " + a.getGrao() + 
-                    "\n\t Data de Entrada: " + a.getDataEntrada() + 
-                    "\n\t Data de Saída: " + a.getDataSaida() + 
-                    "\n\t Quantidade: " + a.getQuantidade() + 
-                    "\n\t Valor da Total: " + a.getValorTotal() +"\n\n");
+            inputList.appendText("Codigo da Venda: " + a.getNumeroDaVenda() + " | ");       
+            inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | "); 
+            inputList.appendText("Grão: " + a.getGrao() + " | "); 
+            inputList.appendText("Data de Entrada: " + a.getDataEntrada() + " | "); 
+            inputList.appendText("Data de Saída: " + a.getDataSaida() + " | ");
+            inputList.appendText("Quantidade: " + a.getQuantidade() + " | "); 
+            inputList.appendText("Valor da Total: " + a.getValorTotal() + "\n\n");
         }
     }
     
     @FXML
     private void limparCampos(){
-        this.campoLista.setText("");
+        this.inputList.setText("");
     }
     
     /*------------------------------------------------------------------------*/
@@ -50,10 +50,6 @@ public class SaidaDeProdutosController {
     @FXML
     private void consultarSilos() throws IOException{
         App.setRoot("consultarSilos");
-    }
-    @FXML
-    private void saidaDeProduto() throws IOException{
-        App.setRoot("saidaDeProduto");
     }
     @FXML
     private void saidaDeProdutos() throws IOException{

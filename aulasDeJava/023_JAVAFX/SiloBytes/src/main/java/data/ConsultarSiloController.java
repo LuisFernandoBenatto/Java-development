@@ -39,7 +39,6 @@ public class ConsultarSiloController {
         for(Armazenagem a : lista){
             inputList.appendText("Numero Da Venda: " + a.getNumeroDaVenda() + " | ");
             inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | ");
-            inputList.appendText("Vendedor: " + a.getVendedorNome() + " | ");
             inputList.appendText("Grão: " + a.getGrao() + " | ");
             inputList.appendText("Quantidade: " + a.getQuantidade() + " | ");
             inputList.appendText("DataEntrada: " + a.getDataEntrada() + " | ");
@@ -100,14 +99,6 @@ public class ConsultarSiloController {
     @FXML
     private void consultarSilos() throws IOException{
         App.setRoot("consultarSilos");
-    }
-    @FXML
-    private void saidaDeProduto() throws IOException{
-        App.setRoot("saidaDeProduto");
-    }
-    @FXML
-    private void entradaDeProdutos() throws IOException{
-        App.setRoot("entradaDeProdutos");
     }
     @FXML
     private void saidaDeProdutos() throws IOException{

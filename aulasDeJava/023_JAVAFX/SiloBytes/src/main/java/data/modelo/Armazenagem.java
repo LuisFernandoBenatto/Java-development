@@ -11,8 +11,7 @@ public class Armazenagem implements Serializable {
     private int quantidade;
     private LocalDate dataEntrada;
     private LocalDate dataSaida;
-    
-    Usuarios vendedor;
+   
     private double valorTotal;
     private long diasArmazenamento;
     
@@ -27,14 +26,13 @@ public class Armazenagem implements Serializable {
     public Armazenagem() {
     }
 
-    public Armazenagem(long numeroDaVenda, String CPF_Produtor, String grao, int quantidade, LocalDate dataEntrada, LocalDate dataSaida, Usuarios vendedor, double valorTotal, long diasArmazenamento) {
+    public Armazenagem(long numeroDaVenda, String CPF_Produtor, String grao, int quantidade, LocalDate dataEntrada, LocalDate dataSaida, double valorTotal, long diasArmazenamento) {
         this.numeroDaVenda = numeroDaVenda;
         this.CPF_Produtor = CPF_Produtor;
         this.grao = grao;
         this.quantidade = quantidade;
         this.dataEntrada = dataEntrada;
         this.dataSaida = dataSaida;
-        this.vendedor = vendedor;
         this.valorTotal = valorTotal;
         this.diasArmazenamento = diasArmazenamento;
         
@@ -146,7 +144,4 @@ public class Armazenagem implements Serializable {
         this.diasArmazenamento = diasArmazenamento;
     }
     
-    public String getVendedorNome(){
-        return vendedor.getNome();
-    }
 }

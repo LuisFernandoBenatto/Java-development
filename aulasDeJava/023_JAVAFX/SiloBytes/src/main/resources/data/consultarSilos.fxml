@@ -169,7 +169,7 @@
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="281.0" layoutY="480.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="154.0" stylesheets="@../styles/Style.css" text="Consultar" textAlignment="CENTER">
+                  <Button layoutX="281.0" layoutY="480.0" mnemonicParsing="false" onAction="#listagemDosSilos" prefHeight="45.0" prefWidth="154.0" stylesheets="@../styles/Style.css" text="Consultar" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="24.0" />
                      </font>

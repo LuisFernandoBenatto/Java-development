@@ -52,10 +52,6 @@ public class ListarUsuarioController {
         App.setRoot("novoProdutor");
     }  
     @FXML
-    private void entradaDeProdutos() throws IOException{
-        App.setRoot("entradaDeProdutos");
-    }
-    @FXML
     private void saidaDeProdutos() throws IOException{
         App.setRoot("saidaDeProdutos");
     }

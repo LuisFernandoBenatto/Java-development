@@ -102,14 +102,6 @@ public class NovoSiloController {
         App.setRoot("consultarSilos");
     }
     @FXML
-    private void saidaDeProduto() throws IOException{
-        App.setRoot("saidaDeProduto");
-    }
-    @FXML
-    private void entradaDeProdutos() throws IOException{
-        App.setRoot("entradaDeProdutos");
-    }
-    @FXML
     private void saidaDeProdutos() throws IOException{
         App.setRoot("saidaDeProdutos");
     }

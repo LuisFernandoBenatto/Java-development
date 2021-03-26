@@ -62,8 +62,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#saidaDeProdutos" text="Saída de Produtos" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#aReceber" text="A Receber" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Listar Devedores" />
                   <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#sair" text="Sair ">
                      <accelerator>

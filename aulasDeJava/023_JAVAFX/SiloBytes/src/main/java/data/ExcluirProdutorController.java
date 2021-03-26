@@ -74,10 +74,6 @@ public class ExcluirProdutorController {
         App.setRoot("listarProdutor");
     }
     @FXML
-    private void entradaDeProdutos() throws IOException{
-        App.setRoot("entradaDeProdutos");
-    }
-    @FXML
     private void saidaDeProdutos() throws IOException{
         App.setRoot("saidaDeProdutos");
     }
