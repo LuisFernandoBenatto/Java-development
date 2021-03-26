@@ -2,7 +2,6 @@ C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\da
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\modelo\Usuarios.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\ExcluirProdutorController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\module-info.java
-C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\util\ArquivoAluguel.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\AjudaController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\AlterarProdutorController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\modelo\Armazenagem.java
@@ -15,8 +14,10 @@ C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\da
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\NovoProdutorController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\util\ArquivoUsuario.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\AlterarUsuarioController.java
-C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\modelo\Aluguel.java
+C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\ConsultarSiloController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\util\Info.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\ExcluirUsuarioController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\ListarUsuarioController.java
 C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\ListarProdutorController.java
+C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\AReceberController.java
+C:\Users\Computer\Documents\NetBeansProjects\SiloBytesVedadeiro\src\main\java\data\SaidaDeProdutosController.java

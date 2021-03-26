@@ -1,7 +1,9 @@
 package data;
 
+import data.modelo.Armazenagem;
 import data.modelo.Produtores;
 import data.util.ArquivoProdutor;
+import data.util.ArquivoSilo;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
@@ -45,6 +47,32 @@ public class NovoSiloController {
             inputList.appendText("Telelefone: " + p.getTelefone() + "\n\n"); 
         }
     }
+    
+    @FXML
+    private void cadastrarNovoSilo() throws IOException{
+        Armazenagem armazem = new Armazenagem();
+        ArrayList<Produtores> lista = ArquivoProdutor.listar();
+        armazem.setNumeroDaVenda(Long.valueOf(campoNumeroDaVenda.getText()));
+        armazem.setCPF_Produtor(campoCPF_Produtor.getText());
+        armazem.setGrao(campoGrao.getText());
+        armazem.setQuantidade(Integer.valueOf(campoQuantidade.getText()));
+        armazem.setDataEntrada(campoDataEntrada.getValue());
+        armazem.setDataSaida(campoDataSaida.getValue());
+        for(Produtores p : lista){   
+            if(p.getCPF().equals(campoCPF_Produtor.getText())){
+                p.setDividaMaior(armazem.getValorTotal());
+                ArquivoProdutor.alterar(campoCPF_Produtor.getText(), p);
+            }
+        }
+        try {
+            ArquivoSilo.inserir(armazem);
+            this.limparCampos();
+        } catch (Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        }    
+    }
+    
     @FXML
     private void limparCampos(){
         this.campoNumeroDaVenda.setText("");
@@ -70,8 +98,8 @@ public class NovoSiloController {
         App.setRoot("novoSilo");
     }
     @FXML
-    private void consultarSilo() throws IOException{
-        App.setRoot("consultarSilo");
+    private void consultarSilos() throws IOException{
+        App.setRoot("consultarSilos");
     }
     @FXML
     private void saidaDeProduto() throws IOException{

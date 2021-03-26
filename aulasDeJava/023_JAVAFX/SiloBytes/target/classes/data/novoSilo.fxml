@@ -59,11 +59,11 @@
           <items>
                   <MenuItem mnemonicParsing="false" text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem disable="true" mnemonicParsing="false" text="Novo Silo" />
-                  <MenuItem mnemonicParsing="false" text="Consultar Silo" />
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#novoSilo" onMenuValidation="#novoSilo" text="Novo Silo" />
+                  <MenuItem mnemonicParsing="false" onAction="#consultarSilos" onMenuValidation="#consultarSilos" text="Consultar Silo" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#voltar" onMenuValidation="#voltar" text="Voltar ao Menu Principal" />
-            <MenuItem mnemonicParsing="false" onAction="#fechar" onMenuValidation="#fechar" text="Sair">
+            <MenuItem mnemonicParsing="false" onAction="#sair" onMenuValidation="#sair" text="Sair">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -113,12 +113,12 @@
                         <Font name="Times New Roman" size="40.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="995.0" layoutY="272.0" prefHeight="40.0" prefWidth="270.0" promptText="Soja, milho, café, etc...">
+                  <TextField fx:id="campoGrao" layoutX="995.0" layoutY="272.0" prefHeight="40.0" prefWidth="270.0" promptText="Soja, milho, café, etc...">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="995.0" layoutY="321.0" prefHeight="40.0" prefWidth="270.0" promptText="quantidade em toneladas">
+                  <TextField fx:id="campoQuantidade" layoutX="995.0" layoutY="321.0" prefHeight="40.0" prefWidth="270.0" promptText="quantidade em toneladas">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -143,7 +143,7 @@
                         <Font name="Times New Roman" size="40.0" />
                      </font>
                   </Label>
-                  <DatePicker layoutX="995.0" layoutY="369.0" prefHeight="40.0" prefWidth="270.0" promptText="00/00/2021" />
+                  <DatePicker fx:id="campoDataEntrada" layoutX="995.0" layoutY="369.0" prefHeight="40.0" prefWidth="270.0" promptText="00/00/2021" />
                   <Text layoutX="571.0" layoutY="569.0" opacity="0.2" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="226.0">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
@@ -154,12 +154,12 @@
                         <Font name="Times New Roman" size="40.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="994.0" layoutY="223.0" prefHeight="40.0" prefWidth="270.0" promptText="000.000.000-00">
+                  <TextField fx:id="campoCPF_Produtor" layoutX="994.0" layoutY="223.0" prefHeight="40.0" prefWidth="270.0" promptText="000.000.000-00">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="241.0" layoutY="480.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" stylesheets="@../styles/Style.css" text=" Cosultar Produtores" textAlignment="CENTER">
+                  <Button layoutX="241.0" layoutY="480.0" mnemonicParsing="false" onAction="#listagemProdutores" prefHeight="45.0" prefWidth="234.0" stylesheets="@../styles/Style.css" text=" Cosultar Produtores" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="24.0" />
                      </font>
@@ -169,8 +169,8 @@
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </TextArea>
-                  <DatePicker layoutX="995.0" layoutY="417.0" prefHeight="40.0" prefWidth="270.0" promptText="Saída estimada" />
-                  <TextField layoutX="995.0" layoutY="173.0" prefHeight="40.0" prefWidth="270.0" promptText="00000">
+                  <DatePicker fx:id="campoDataSaida" layoutX="995.0" layoutY="417.0" prefHeight="40.0" prefWidth="270.0" promptText="Saída estimada" />
+                  <TextField fx:id="campoNumeroDaVenda" layoutX="995.0" layoutY="173.0" prefHeight="40.0" prefWidth="270.0" promptText="00000">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -180,7 +180,7 @@
                         <Font name="Times New Roman" size="40.0" />
                      </font>
                   </Label>
-                  <Button layoutX="994.0" layoutY="480.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="124.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
+                  <Button layoutX="994.0" layoutY="480.0" mnemonicParsing="false" onAction="#cadastrarNovoSilo" prefHeight="45.0" prefWidth="124.0" stylesheets="@../styles/Style.css" text="Salvar" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="24.0" />
                      </font>
@@ -219,7 +219,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="349.0" layoutY="20.0" mnemonicParsing="false" onAction="#entradaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
+                  <Button cancelButton="true" defaultButton="true" layoutX="349.0" layoutY="20.0" mnemonicParsing="false" onAction="#novoSilo" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>

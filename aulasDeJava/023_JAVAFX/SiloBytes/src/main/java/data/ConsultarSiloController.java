@@ -39,20 +39,47 @@ public class ConsultarSiloController {
         for(Armazenagem a : lista){
             inputList.appendText("Numero Da Venda: " + a.getNumeroDaVenda() + " | ");
             inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | ");
+            inputList.appendText("Vendedor: " + a.getVendedorNome() + " | ");
             inputList.appendText("Grão: " + a.getGrao() + " | ");
             inputList.appendText("Quantidade: " + a.getQuantidade() + " | ");
             inputList.appendText("DataEntrada: " + a.getDataEntrada() + " | ");
-            inputList.appendText("DataSaída: " + a.getDataSaida() + "\n\n");
+            inputList.appendText("DataSaída: " + a.getDataSaida() + " | ");
+            inputList.appendText("Valor Total: " + a.getValorTotal() + "\n\n");
         }
     }
     
     @FXML
+    Armazenagem armazem = new Armazenagem();
+    
+    @FXML
+    private void alterarArmazenagem() throws IOException {
+        armazem.setGrao(campoGrao.getText());
+        armazem.setQuantidade(Integer.valueOf(campoQuantidade.getText()));
+        armazem.setDataSaida(campoDataSaida.getValue());
+        try {
+            ArquivoSilo.alterar(Long.valueOf(campoNumeroDaVenda.getText()), armazem, campoDataSaida.getValue());
+            this.limparCampos();
+        } catch (Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        }   
+    }
+    @FXML
+    private void excluirArmazenagem() throws IOException{
+        armazem.setNumeroDaVenda(Long.valueOf(campoNumeroDaVenda.getText()));
+        try {
+            ArquivoSilo.excluir(Long.valueOf(campoNumeroDaVenda.getText()), armazem);
+            this.limparCampos();
+        } catch (Exception e) {
+            this.limparCampos();
+            App.setRoot("menu");
+        } 
+    }
+    @FXML
     private void limparCampos(){
         this.campoNumeroDaVenda.setText("");
-        this.campoCPF_Produtor.setText("");
         this.campoGrao.setText("");
         this.campoQuantidade.setText("");
-        this.campoDataEntrada.getEditor().clear();
         this.campoDataSaida.getEditor().clear();
         this.inputList.setText("");
     }
@@ -71,8 +98,8 @@ public class ConsultarSiloController {
         App.setRoot("novoSilo");
     }
     @FXML
-    private void consultarSilo() throws IOException{
-        App.setRoot("consultarSilo");
+    private void consultarSilos() throws IOException{
+        App.setRoot("consultarSilos");
     }
     @FXML
     private void saidaDeProduto() throws IOException{

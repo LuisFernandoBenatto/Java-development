@@ -1,11 +1,38 @@
 package data;
 
+import data.modelo.Armazenagem;
+import data.util.ArquivoSilo;
 import java.io.IOException;
+import java.util.ArrayList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 
 public class SaidaDeProdutosController {
     
+    @FXML
+    private TextArea campoLista;
     
+    
+    @FXML
+    private void listar(ActionEvent even){
+        ArrayList<Armazenagem> lista = ArquivoSilo.listar();
+        for(Armazenagem a : lista){
+            campoLista.appendText(" Codigo da Venda: " + a.getNumeroDaVenda() + 
+                    "\t Vendedor:" + a.getVendedorNome() +
+                    "\t CPF do Produtor: " + a.getCPF_Produtor() + 
+                    "\n\t Grão: " + a.getGrao() + 
+                    "\n\t Data de Entrada: " + a.getDataEntrada() + 
+                    "\n\t Data de Saída: " + a.getDataSaida() + 
+                    "\n\t Quantidade: " + a.getQuantidade() + 
+                    "\n\t Valor da Total: " + a.getValorTotal() +"\n\n");
+        }
+    }
+    
+    @FXML
+    private void limparCampos(){
+        this.campoLista.setText("");
+    }
     
     /*------------------------------------------------------------------------*/
     @FXML
@@ -21,16 +48,12 @@ public class SaidaDeProdutosController {
         App.setRoot("novoSilo");
     }
     @FXML
-    private void consultarSilo() throws IOException{
-        App.setRoot("consultarSilo");
+    private void consultarSilos() throws IOException{
+        App.setRoot("consultarSilos");
     }
     @FXML
     private void saidaDeProduto() throws IOException{
         App.setRoot("saidaDeProduto");
-    }
-    @FXML
-    private void entradaDeProdutos() throws IOException{
-        App.setRoot("entradaDeProdutos");
     }
     @FXML
     private void saidaDeProdutos() throws IOException{

@@ -13,10 +13,6 @@ public class MenuController {
         App.setRoot("novoProdutor");
     }
     @FXML
-    private void novoSilo() throws IOException{
-        App.setRoot("novoSilo");
-    }
-    @FXML
     private void listarUsuario() throws IOException{
         App.setRoot("listarUsuario");
     }
@@ -51,6 +47,14 @@ public class MenuController {
     @FXML
     private void aReceber() throws IOException{
         App.setRoot("aReceber");
+    }
+    @FXML
+    private void novoSilo() throws IOException{
+        App.setRoot("novoSilo");
+    }
+    @FXML
+    private void consultarSilos() throws IOException{
+        App.setRoot("consultarSilos");
     }
     @FXML
     private void ajuda() throws IOException{

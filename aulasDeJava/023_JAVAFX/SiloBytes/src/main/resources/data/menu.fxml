@@ -56,9 +56,9 @@
       <menus>
         <Menu mnemonicParsing="false" text="Arquivo">
           <items>
-                  <MenuItem mnemonicParsing="false" onAction="#cadastrarUsuario" text="Armazenagem Existentes" />
+                  <MenuItem mnemonicParsing="false" onAction="#aReceber" text="Armazenagem Existentes" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#entradaDeProdutos" text="Entrada de Produtos" />
+            <MenuItem mnemonicParsing="false" onAction="#novoSilo" text="Entrada de Produtos" />
                   <MenuItem mnemonicParsing="false" onAction="#saidaDeProdutos" text="Saída de Produtos" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#aReceber" text="A Receber" />
@@ -93,11 +93,9 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Silos">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#novoSilo" text="Novo Silo" />
+                  <MenuItem mnemonicParsing="false" onAction="#novoSilo" onMenuValidation="#novoSilo" text="Novo Silo" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Consultar Silo" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Liberar Silo" />
+                  <MenuItem mnemonicParsing="false" onAction="#consultarSilos" onMenuValidation="#consultarSilos" text="Consultar Silo" />
                </items>
             </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
@@ -142,7 +140,7 @@
                            </light>
                         </Lighting>
                      </effect></Button>
-                  <Button layoutX="236.0" layoutY="20.0" mnemonicParsing="false" onAction="#entradaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="236.0" layoutY="20.0" mnemonicParsing="false" onAction="#novoSilo" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>

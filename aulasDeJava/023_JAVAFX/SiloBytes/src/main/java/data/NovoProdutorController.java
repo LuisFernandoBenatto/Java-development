@@ -25,13 +25,11 @@ public class NovoProdutorController {
     @FXML
     private TextField campoTelefone;
     
-    @FXML
-    private Label lblMsg;
     
+    Produtores produtor = new Produtores();
     
     @FXML
-    private void cadastrarProdutor(){
-        Produtores produtor = new Produtores();
+    private void cadastrarProdutor() throws IOException{
         produtor.setID(campoID.getText());
         produtor.setNomeProdutor(campoNomeProdutor.getText());
         produtor.setCPF(campoCPF.getText());
@@ -40,9 +38,11 @@ public class NovoProdutorController {
         try {
             ArquivoProdutor.inserir(produtor);
             this.limparCampos();
-            lblMsg.setText(produtor.getNomeProdutor() + " cadastrado com sucesso!");
+            System.out.println("Cadastro realizado com sucesso!");
         } catch (Exception e) {
-            lblMsg.setText("Erro ao cadastrar!");
+            System.out.println("Erro ao relizar o cadastro!");
+            this.limparCampos();
+            App.setRoot("menu");
         }    
     }
     
@@ -82,10 +82,6 @@ public class NovoProdutorController {
         App.setRoot("excluirProdutor");
     }
     @FXML
-    private void entradaDeProdutos() throws IOException{
-        App.setRoot("entradaDeProdutos");
-    }
-    @FXML
     private void saidaDeProdutos() throws IOException{
         App.setRoot("saidaDeProdutos");
     }
@@ -96,5 +92,13 @@ public class NovoProdutorController {
     @FXML
     private void ajuda() throws IOException{
         App.setRoot("ajuda");
+    }
+    @FXML
+    private void novoSilo() throws IOException{
+        App.setRoot("novoSilo");
+    }
+    @FXML
+    private void consultarSilos() throws IOException{
+        App.setRoot("consultarSilos");
     }
 }

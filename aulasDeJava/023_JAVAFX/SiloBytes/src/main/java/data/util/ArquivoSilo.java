@@ -50,7 +50,7 @@ public class ArquivoSilo {
         }
         return lista;
     }
-    public static boolean excluir(long numeroVenda){
+    public static boolean excluir(long numeroVenda, Armazenagem silo){
         ArrayList<Armazenagem> lista = ArquivoSilo.listar();
         for(Armazenagem a : lista){
             if(a.getNumeroDaVenda() == numeroVenda){
@@ -81,10 +81,12 @@ public class ArquivoSilo {
         }
         return false;
     }
-    public static void alterar(long numeroVenda, LocalDate dataSaida){
+    public static void alterar(long numeroVenda, Armazenagem novoSilo, LocalDate dataSaida){
         ArrayList<Armazenagem> lista = ArquivoSilo.listar();
-        for(Armazenagem a : lista){   
+        for(Armazenagem a : lista){ 
             if(a.getNumeroDaVenda() == numeroVenda){  
+                a.setGrao(novoSilo.getGrao());
+                a.setQuantidade(novoSilo.getQuantidade());
                 a.setDataSaida(dataSaida);
                 long quatidadeDeDias = ChronoUnit.DAYS.between(a.getDataEntrada(), a.getDataSaida());
                 if(a.getGrao().equals("Cevada") || a.getGrao().equals("cevada") || a.getGrao().equals("CEVADA")){

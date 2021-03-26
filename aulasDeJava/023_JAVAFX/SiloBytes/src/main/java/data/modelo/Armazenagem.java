@@ -24,6 +24,9 @@ public class Armazenagem implements Serializable {
     public static double toneladaSoja = valorTonelada * 1.96;
     public static double toneladaCafe = valorTonelada * 0.717;
 
+    public Armazenagem() {
+    }
+
     public Armazenagem(long numeroDaVenda, String CPF_Produtor, String grao, int quantidade, LocalDate dataEntrada, LocalDate dataSaida, Usuarios vendedor, double valorTotal, long diasArmazenamento) {
         this.numeroDaVenda = numeroDaVenda;
         this.CPF_Produtor = CPF_Produtor;

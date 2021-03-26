@@ -67,4 +67,12 @@ public class ListarUsuarioController {
     private void ajuda() throws IOException{
         App.setRoot("ajuda");
     }
+    @FXML
+    private void novoSilo() throws IOException{
+        App.setRoot("novoSilo");
+    }
+    @FXML
+    private void consultarSilos() throws IOException{
+        App.setRoot("consultarSilos");
+    }
 }

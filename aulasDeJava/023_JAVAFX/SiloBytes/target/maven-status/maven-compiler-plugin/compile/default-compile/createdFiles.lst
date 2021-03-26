@@ -3,7 +3,6 @@ data\ListarProdutorController.class
 data\ListarUsuarioController.class
 data\util\ArquivoUsuario.class
 data\App.class
-data\modelo\Aluguel.class
 data\modelo\Usuarios.class
 data\MenuController.class
 module-info.class
@@ -13,7 +12,6 @@ data\NovoProdutorController.class
 data\util\Info.class
 data\ExcluirUsuarioController.class
 data\util\ArquivoProdutor.class
-data\util\ArquivoAluguel.class
 data\modelo\Produtores.class
 data\util\ArquivoSilo.class
 data\NovoSiloController.class

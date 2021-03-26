@@ -201,7 +201,7 @@
                         </Lighting>
                      </effect>
                   </Button>
-                  <Button layoutX="349.0" layoutY="20.0" mnemonicParsing="false" onAction="#entradaDeProdutos" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="349.0" layoutY="20.0" mnemonicParsing="false" onAction="#novoSilo" prefHeight="80.0" prefWidth="100.0" text="Entrada de produtos" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>
