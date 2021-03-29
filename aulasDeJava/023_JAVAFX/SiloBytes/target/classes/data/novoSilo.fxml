@@ -170,7 +170,7 @@
                      </font>
                   </TextArea>
                   <DatePicker fx:id="campoDataSaida" layoutX="995.0" layoutY="417.0" prefHeight="40.0" prefWidth="270.0" promptText="Saída estimada" />
-                  <TextField fx:id="campoNumeroDaVenda" layoutX="995.0" layoutY="173.0" prefHeight="40.0" prefWidth="270.0" promptText="00000">
+                  <TextField fx:id="campoNumeroDaVenda" layoutX="995.0" layoutY="173.0" prefHeight="40.0" prefWidth="71.0" promptText="00000">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -185,6 +185,16 @@
                         <Font name="Times New Roman" size="24.0" />
                      </font>
                   </Button>
+                  <TextField fx:id="campoID_Produtor" layoutX="1193.0" layoutY="174.0" prefHeight="40.0" prefWidth="71.0" promptText="00000">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="TOP_RIGHT" layoutX="1073.0" layoutY="172.0" prefHeight="45.0" prefWidth="100.0" text="ID:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Times New Roman" size="40.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane maxWidth="1567.0" prefHeight="112.0" prefWidth="1366.0" style="-fx-border-color: #ccc; -fx-max-width: 1366;">

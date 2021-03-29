@@ -2,11 +2,14 @@ package data.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 
 public class Armazenagem implements Serializable {
 
     private long numeroDaVenda;
     private String CPF_Produtor;
+    private String ID_Produtor;
     private String grao;
     private int quantidade;
     private LocalDate dataEntrada;
@@ -15,7 +18,7 @@ public class Armazenagem implements Serializable {
     private double valorTotal;
     private long diasArmazenamento;
     
-    private static final double valorTonelada = 1000;
+    private static final double valorTonelada = 100;
     
     public static double toneladaCevada = valorTonelada * 1.35;
     public static double toneladaMilho = valorTonelada * 0.925;
@@ -24,44 +27,54 @@ public class Armazenagem implements Serializable {
     public static double toneladaCafe = valorTonelada * 0.717;
 
     public Armazenagem() {
+        this.numeroDaVenda = -1;
+        this.CPF_Produtor = "000.000.000-00";
+        this.ID_Produtor = "-1";
+        this.grao = "";
+        this.quantidade = 0;
+        this.dataEntrada = LocalDate.now();
+        this.dataSaida = LocalDate.of(2021, Month.DECEMBER, 31);
+        this.valorTotal = 0.0;
+        this.diasArmazenamento = 0;
     }
 
-    public Armazenagem(long numeroDaVenda, String CPF_Produtor, String grao, int quantidade, LocalDate dataEntrada, LocalDate dataSaida, double valorTotal, long diasArmazenamento) {
+    public Armazenagem(long numeroDaVenda, String CPF_Produtor, String ID_Produtor, String grao, int quantidade, LocalDate dataEntrada, LocalDate dataSaida, double valorTotal, long diasArmazenamento) {
         this.numeroDaVenda = numeroDaVenda;
         this.CPF_Produtor = CPF_Produtor;
+        this.ID_Produtor = ID_Produtor;
         this.grao = grao;
         this.quantidade = quantidade;
         this.dataEntrada = dataEntrada;
         this.dataSaida = dataSaida;
         this.valorTotal = valorTotal;
-        this.diasArmazenamento = diasArmazenamento;
+        this.diasArmazenamento = ChronoUnit.DAYS.between(this.dataEntrada, this.dataSaida);;
         
         switch (this.grao) {
             case "Cevada":
             case "cevada":
             case "CEVADA":
-                this.valorTotal = this.quantidade * this.diasArmazenamento * Armazenagem.toneladaCevada;
+                this.valorTotal = this.quantidade * this.diasArmazenamento * toneladaCevada;
                 break;
             case "Milho":
             case "milho":
             case "MILHO":
-                this.valorTotal = this.quantidade*this.diasArmazenamento * Armazenagem.toneladaMilho;
+                this.valorTotal = this.quantidade * this.diasArmazenamento * toneladaMilho;
                 break;
             case "Trigo":
             case "trigo":
             case "TRIGO":
-                this.valorTotal = this.quantidade*this.diasArmazenamento * Armazenagem.toneladaTrigo;
+                this.valorTotal = this.quantidade * this.diasArmazenamento * toneladaTrigo;
                 break;
             case "Soja":
             case "soja":
             case "SOJA":
-                this.valorTotal = this.quantidade*this.diasArmazenamento * Armazenagem.toneladaSoja;
+                this.valorTotal = this.quantidade * this.diasArmazenamento * toneladaSoja;
                 break;
             case "Cafe":
             case "cafe":
             case "CAFE":
             case "Café":
-                this.valorTotal = this.quantidade*this.diasArmazenamento * Armazenagem.toneladaCafe;
+                this.valorTotal = this.quantidade * this.diasArmazenamento * toneladaCafe;
                 break;
             default:
                 break;
@@ -142,6 +155,14 @@ public class Armazenagem implements Serializable {
 
     public void setDiasArmazenamento(long diasArmazenamento) {
         this.diasArmazenamento = diasArmazenamento;
+    }
+
+    public String getID_Produtor() {
+        return ID_Produtor;
+    }
+
+    public void setID_Produtor(String ID_Produtor) {
+        this.ID_Produtor = ID_Produtor;
     }
     
 }

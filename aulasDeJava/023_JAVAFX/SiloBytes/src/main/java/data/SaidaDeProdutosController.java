@@ -17,10 +17,10 @@ public class SaidaDeProdutosController {
     @FXML
     private void listar(ActionEvent even){
         ArrayList<Armazenagem> lista = ArquivoSilo.listar();
-        
         for(Armazenagem a : lista){
-            inputList.appendText("Codigo da Venda: " + a.getNumeroDaVenda() + " | ");       
-            inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | "); 
+            inputList.appendText("Codigo da Venda: " + a.getNumeroDaVenda() + " | ");        
+            inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | ");
+            inputList.appendText("ID do Produtor: " + a.getID_Produtor() + " | ");
             inputList.appendText("Grão: " + a.getGrao() + " | "); 
             inputList.appendText("Data de Entrada: " + a.getDataEntrada() + " | "); 
             inputList.appendText("Data de Saída: " + a.getDataSaida() + " | ");

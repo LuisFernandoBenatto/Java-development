@@ -20,6 +20,9 @@ public class NovoSiloController {
     private TextField campoNumeroDaVenda;
     
     @FXML
+    private TextField campoID_Produtor;
+    
+    @FXML
     private TextField campoCPF_Produtor;
 
     @FXML
@@ -53,6 +56,7 @@ public class NovoSiloController {
         Armazenagem armazem = new Armazenagem();
         ArrayList<Produtores> lista = ArquivoProdutor.listar();
         armazem.setNumeroDaVenda(Long.valueOf(campoNumeroDaVenda.getText()));
+        armazem.setID_Produtor(campoID_Produtor.getText());
         armazem.setCPF_Produtor(campoCPF_Produtor.getText());
         armazem.setGrao(campoGrao.getText());
         armazem.setQuantidade(Integer.valueOf(campoQuantidade.getText()));
@@ -76,6 +80,7 @@ public class NovoSiloController {
     @FXML
     private void limparCampos(){
         this.campoNumeroDaVenda.setText("");
+        this.campoID_Produtor.setText("");
         this.campoCPF_Produtor.setText("");
         this.campoGrao.setText("");
         this.campoQuantidade.setText("");

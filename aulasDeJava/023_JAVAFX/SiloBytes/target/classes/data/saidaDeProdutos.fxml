@@ -117,7 +117,7 @@
                         <Font name="Times New Roman" size="24.0" />
                      </font>
                   </Button>
-                  <TextArea fx:id="inputList" layoutX="237.0" layoutY="139.0" prefHeight="332.0" prefWidth="881.0" />
+                  <TextArea fx:id="inputList" editable="false" layoutX="237.0" layoutY="139.0" prefHeight="332.0" prefWidth="881.0" wrapText="true" />
                   <Button layoutX="444.0" layoutY="484.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="74.0" prefWidth="150.0" stylesheets="@../styles/Style.css" text="Limpar" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="24.0" />

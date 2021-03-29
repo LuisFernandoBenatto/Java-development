@@ -67,6 +67,7 @@ public class ArquivoProdutor {
                 p.setCPF(novoProdutor.getCPF());
                 p.setDataNascimento(novoProdutor.getDataNascimento());
                 p.setTelefone(novoProdutor.getTelefone());
+                p.setDivida(novoProdutor.getDivida());
                 try {
                     FileOutputStream fos = new FileOutputStream(Info.ARQUIVO_PRODUTOR);
                     ObjectOutputStream oos = new ObjectOutputStream(fos);

@@ -97,12 +97,12 @@
                         <Font name="Times New Roman" size="24.0" />
                      </font>
                   </Button>
-                  <Label alignment="TOP_RIGHT" layoutX="702.0" layoutY="327.0" prefHeight="45.0" prefWidth="280.0" text="Valor Total:  R$" textAlignment="CENTER">
+                  <Label alignment="TOP_RIGHT" layoutX="677.0" layoutY="327.0" prefHeight="45.0" prefWidth="305.0" text="Valor Total:  R$" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="40.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoValorRecebido" layoutX="995.0" layoutY="330.0" prefHeight="40.0" prefWidth="270.0" promptText="R$ 0.00">
+                  <TextField fx:id="campoValorRecebido" alignment="TOP_RIGHT" layoutX="995.0" layoutY="330.0" prefHeight="40.0" prefWidth="154.0" promptText="R$ 0.00">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -127,12 +127,12 @@
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
-                  <Label layoutX="702.0" layoutY="274.0" text="CPF do produtor:" textAlignment="CENTER">
+                  <Label alignment="TOP_RIGHT" layoutX="675.0" layoutY="275.0" prefHeight="45.0" prefWidth="305.0" text="ID do produtor:" textAlignment="CENTER">
                      <font>
                         <Font name="Times New Roman" size="40.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campoCPF_Produtor" focusTraversable="false" layoutX="995.0" layoutY="277.0" prefHeight="40.0" prefWidth="270.0" promptText="000.000.000-00">
+                  <TextField fx:id="campoID_Produtor" alignment="TOP_RIGHT" focusTraversable="false" layoutX="995.0" layoutY="277.0" prefHeight="40.0" prefWidth="154.0" promptText="00000">
                      <font>
                         <Font size="18.0" />
                      </font>

@@ -17,7 +17,7 @@ public class AReceberController {
     private TextArea inputList;
     
     @FXML
-    private TextField campoCPF_Produtor;
+    private TextField campoID_Produtor;
 
     @FXML
     private TextField campoValorRecebido;
@@ -30,12 +30,19 @@ public class AReceberController {
         double valor = Double.parseDouble(campoValorRecebido.getText());
         ArrayList<Produtores> lista = ArquivoProdutor.listar();
         for(Produtores p : lista){
-            if(p.getCPF().equals(campoCPF_Produtor.getText())){
-                p.setDividaMenor(valor);
-                ArquivoProdutor.alterar(campoCPF_Produtor.getText(), p);
+            if(p.getID().equals(campoID_Produtor.getText())){
+               p.setDividaMenor(valor);
+                try {
+                    ArquivoProdutor.alterar(campoID_Produtor.getText(), p);
+                    System.out.println("Pago!");
+                    this.limparCampos();
+                } catch(Exception e) {
+                    System.out.println("Não foi Pago!");
+                    this.limparCampos();
+                    App.setRoot("menu");
+                }  
             }
         }
-        App.setRoot("menu");
     }
     
     @FXML
@@ -43,7 +50,8 @@ public class AReceberController {
         ArrayList<Armazenagem> lista = ArquivoSilo.listar();
         for(Armazenagem a : lista){
             inputList.appendText("Codigo da Venda: " + a.getNumeroDaVenda() + " | ");        
-            inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | "); 
+            inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | ");
+            inputList.appendText("ID do Produtor: " + a.getID_Produtor() + " | ");
             inputList.appendText("Grão: " + a.getGrao() + " | "); 
             inputList.appendText("Data de Entrada: " + a.getDataEntrada() + " | "); 
             inputList.appendText("Data de Saída: " + a.getDataSaida() + " | ");
@@ -54,7 +62,7 @@ public class AReceberController {
     
     @FXML
     private void limparCampos(){
-        this.campoCPF_Produtor.setText("");
+        this.campoID_Produtor.setText("");
         this.campoValorRecebido.setText("");
         this.inputList.setText("");
     }
