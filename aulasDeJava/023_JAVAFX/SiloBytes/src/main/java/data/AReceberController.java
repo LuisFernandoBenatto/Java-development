@@ -48,6 +48,7 @@ public class AReceberController {
     @FXML
     private void listar(ActionEvent even){
         ArrayList<Armazenagem> lista = ArquivoSilo.listar();
+        ArrayList<Produtores> lista2 = ArquivoProdutor.listar();
         for(Armazenagem a : lista){
             inputList.appendText("Codigo da Venda: " + a.getNumeroDaVenda() + " | ");        
             inputList.appendText("CPF do Produtor: " + a.getCPF_Produtor() + " | ");
@@ -56,7 +57,12 @@ public class AReceberController {
             inputList.appendText("Data de Entrada: " + a.getDataEntrada() + " | "); 
             inputList.appendText("Data de Saída: " + a.getDataSaida() + " | ");
             inputList.appendText("Quantidade: " + a.getQuantidade() + " | "); 
-            inputList.appendText("Valor da Total: " + a.getValorTotal() + "\n\n");
+            inputList.appendText("Valor da Total: " + a.getValorTotal() + " | ");
+            for(Produtores p : lista2 ) {
+                if(a.getID_Produtor().equals(p.getID())) {
+                    inputList.appendText("Valor Atual da Divida: " + p.getDivida() + "\n\n");
+                }   
+            }
         }
     }
     

@@ -14,7 +14,7 @@ public class Armazenagem implements Serializable {
     private int quantidade;
     private LocalDate dataEntrada;
     private LocalDate dataSaida;
-   
+    
     private double valorTotal;
     private long diasArmazenamento;
     

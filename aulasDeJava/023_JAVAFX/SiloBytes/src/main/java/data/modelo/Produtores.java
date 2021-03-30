@@ -9,7 +9,7 @@ public class Produtores implements Serializable{
     private String cpf;
     private String telefone;
     private LocalDate nascimento;
-    private double divida;
+    private double divida = 0.0;
     
     public Produtores () {
         this.ID = "";

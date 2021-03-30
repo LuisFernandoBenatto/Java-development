@@ -20,7 +20,8 @@ public class ListarProdutorController {
             inputList.appendText("Nome Produtor: " + p.getNomeProdutor() + " | ");
             inputList.appendText("CPF: " + p.getCPF() + " | ");
             inputList.appendText("DataNascimento: " + p.getDataNascimento() + " | ");
-            inputList.appendText("Telelefone: " + p.getTelefone() + "\n\n"); 
+            inputList.appendText("Telelefone: " + p.getTelefone() + " | ");
+            inputList.appendText("Divida Atual: " + p.getDivida() + "\n\n"); 
         }
     }
     

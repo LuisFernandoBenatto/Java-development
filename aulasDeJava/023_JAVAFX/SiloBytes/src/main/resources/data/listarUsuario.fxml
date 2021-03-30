@@ -117,7 +117,7 @@
                         <Font name="Times New Roman" size="18.0" />
                      </font>
                   </Text>
-                  <TextArea fx:id="inputList" editable="false" focusTraversable="false" layoutX="372.0" layoutY="139.0" onDragDetected="#limparCampos" prefHeight="300.0" prefWidth="624.0" wrapText="true">
+                  <TextArea fx:id="inputList" focusTraversable="false" layoutX="372.0" layoutY="139.0" onDragDetected="#limparCampos" prefHeight="300.0" prefWidth="624.0" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font></TextArea>
