@@ -133,7 +133,7 @@
                         <Font name="Times New Roman" size="24.0" />
                      </font>
                   </Button>
-                  <TextArea fx:id="inputList" focusTraversable="false" layoutX="359.0" layoutY="139.0" prefHeight="163.0" prefWidth="654.0" wrapText="true">
+                  <TextArea fx:id="inputList" editable="false" focusTraversable="false" layoutX="359.0" layoutY="139.0" prefHeight="163.0" prefWidth="654.0" wrapText="true">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
