@@ -1,0 +1,11 @@
+produtor_consumidor\Main.class
+produtor_consumidor\Consumidor.class
+carros_ponte\Ponte.class
+thread\MainSequencial.class
+thread\TarefaConcorrente.class
+produtor_consumidor\Buffer.class
+thread\MainConcorrente.class
+thread\TarefaSequencial.class
+produtor_consumidor\Produtor.class
+carros_ponte\Carros.class
+carros_ponte\Main.class
